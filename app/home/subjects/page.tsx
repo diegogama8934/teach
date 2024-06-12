@@ -1,31 +1,17 @@
 "use client"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Header from "@/components/Header";
 
 export default function Page() {
   const [subjects, setSubjects] = useState<String[]>();
-  const router = useRouter();
+
 
   return (
     <>
-      <header className="flex justify-between items-center">
-        <h1 className="text-4xl font-extralight text-[#888888]">Mis clases</h1>
-        <div className="flex gap-2">
-          <button className="bg-transparent border-primaryColor px-4 py-2 border-[1px] text-primaryColor rounded-md flex items-center gap-2">
-            <span className="inline-block text-sm">Ingresa a una clase</span>
-            <span className="material-symbols-rounded !text-primaryColor inline-block !text-[18px]">arrow_circle_up</span>
-          </button>
-          <button
-            onClick={() => router.push("/home/subjects/add")}
-            className="bg-primaryColor border-primaryColor px-4 py-2 border-[1px] text-white rounded-md flex items-center gap-2">
-            <span className="inline-block text-sm">Crear una clase</span>
-            <span className="material-symbols-rounded !text-white inline-block !text-[18px]">add_circle</span>
-          </button>
-          <button className="px-4 py-2 rounded-md hover:bg-white hover:cursor-pointer transition-colors">
-            Diego Martínez García
-          </button>
-        </div>
-      </header>
+
+      <Header title="Ingresa a una clase" secondaryAction={SecondaryAction()} primaryAction={PrimaryAction()} />
+
       <main className="h-full w-full bg-white rounded-3xl">
         {
           subjects?.length ?
@@ -46,5 +32,26 @@ export default function Page() {
         }
       </main>
     </>
+  );
+}
+
+function PrimaryAction(): JSX.Element {
+  const router = useRouter();
+  return (
+    <button
+      onClick={() => router.push("/home/subjects/add")}
+      className="bg-primaryColor border-primaryColor px-4 py-2 border-[1px] text-white rounded-md flex items-center gap-2">
+      <span className="inline-block text-sm">Crear una clase</span>
+      <span className="material-symbols-rounded !text-white inline-block !text-[18px]">add_circle</span>
+    </button>
+  );
+}
+
+function SecondaryAction(): JSX.Element {
+  return (
+    <button className="bg-transparent border-primaryColor px-4 py-2 border-[1px] text-primaryColor rounded-md flex items-center gap-2">
+      <span className="inline-block text-sm">Ingresa a una clase</span>
+      <span className="material-symbols-rounded !text-primaryColor inline-block !text-[18px]">arrow_circle_up</span>
+    </button>
   );
 }
