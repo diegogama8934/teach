@@ -28,7 +28,7 @@ function Card(
   lessTimeActs: number | undefined,
   lowTimeActs: number | undefined) {
   return (
-    <div className="h-80 w-[420px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg">
+    <div className="h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg">
       <h3 className="text-2xl font-bold text-primaryColor">{name.length != 0 ? name : "Nombre de la materia"}</h3>
       <p className="bg-primaryColor w-full text-center text-white py-2">{teacher}</p>
       {
@@ -45,7 +45,7 @@ function Card(
 
 function CardWithTags(name: string, teacher: string, tags: Tag[], onTimeActs: number | undefined, lessTimeActs: number | undefined, lowTimeActs: number | undefined) {
   return (
-    <div className="h-80 w-[420px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow">
+    <div className="h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow">
       <div className="w-full flex justify-between items-center">
         <div className="flex flex-col gap-2">
           <h3 className="text-2xl font-bold text-primaryColor w-full text-left">{name.length != 0 ? name : "Nombre de la materia"}</h3>
