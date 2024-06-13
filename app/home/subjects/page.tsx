@@ -1,34 +1,63 @@
 "use client"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { subjectsAsStudent, subjectsAsTeacher } from "@/utils/FakeData";
+import SubjectCard from "@/components/SubjectCard";
 import Header from "@/components/Header";
 
 export default function Page() {
-  const [subjects, setSubjects] = useState<String[]>();
+  const [subjects, setSubjects] = useState<String[]>(["xd"]);
 
 
   return (
     <>
 
-      <Header title="Ingresa a una clase" secondaryAction={SecondaryAction()} primaryAction={PrimaryAction()} />
+      <Header title="Mis clases" secondaryAction={SecondaryAction()} primaryAction={PrimaryAction()} />
 
-      <main className="h-full w-full bg-white rounded-3xl">
+      <main className="flex-1 w-full bg-white rounded-3xl p-8">
         {
-          subjects?.length ?
-            (
-              <div>
+          subjectsAsStudent &&
+          (
+            <div className="w-full flex flex-wrap gap-4 mb-16">
+              <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que tomas</h2>
+              {
+                subjectsAsStudent.map((subject, index) => (
+                  <SubjectCard
+                    key={index}
+                    name={subject.name}
+                    teacher="Diego Martínez García"
+                    tags={subject.tags}
+                    lessTimeActs={subject.lessTimeActs}
+                    lowTimeActs={subject.lowTimeActs}
+                    onTimeActs={subject.onTimeActs} />
+                ))
+              }
+            </div>
+          )
+        }
+        {
+          subjectsAsTeacher &&
+          (
 
-              </div>
-            )
-            :
-            (
-              <div className="flex justify-center items-center flex-col h-full">
-                <span className="material-symbols-rounded !text-[#C0C0C0] inline-block !text-[140px]">tv_off</span>
-                <p className="text-[#C0C0C0] text-3xl max-w-96 text-center">
-                  Aún no estás inscrito o impartes alguna materia
-                </p>
-              </div>
-            )
+            <div className="w-full flex flex-wrap gap-4">
+              <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que impartes</h2>
+              {
+                subjectsAsTeacher.map((subject, index) => (
+                  <SubjectCard key={index} name={subject.name} teacher="Diego Martínez García" tags={subject.tags} />
+                ))
+              }
+            </div>
+
+          )
+          // :
+          // (
+          //   <div className="flex justify-center items-center flex-col h-full">
+          //     <span className="material-symbols-rounded !text-[#C0C0C0] inline-block !text-[140px]">tv_off</span>
+          //     <p className="text-[#C0C0C0] text-3xl max-w-96 text-center">
+          //       Aún no estás inscrito o impartes alguna materia
+          //     </p>
+          //   </div>
+          // )
         }
       </main>
     </>

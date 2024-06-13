@@ -4,7 +4,7 @@ export default function HomeLayout({ children }: { children: ReactNode }) {
 
 
   return (
-    <div className="min-h-screen flex">
+    <div className="flex">
       <aside className="bg-zinc-100 p-4 flex flex-col justify-between">
         <div className="flex flex-col gap-4">
           <div className="w-10 h-10 flex justify-center items-center">
@@ -32,7 +32,7 @@ export default function HomeLayout({ children }: { children: ReactNode }) {
           <span className="material-symbols-rounded !text-green-800">settings</span>
         </button>
       </aside>
-      <div className="flex flex-col p-4 w-full gap-4">
+      <div className="flex flex-col p-4 w-full gap-4 h-screen overflow-auto">
         {children}
       </div>
     </div>

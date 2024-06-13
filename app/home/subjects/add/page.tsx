@@ -1,6 +1,6 @@
 "use client"
 import Header from "@/components/Header";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import SubjectCard from "@/components/SubjectCard";
 import FieldSubjectInput from "@/components/FieldSubjectInput";
@@ -27,7 +27,6 @@ export default function Page() {
     tags: []
   });
   const [idCounter, setIdCounter] = useState(0);
-
   const handleAddInput = () => {
     if (subjectData.tags.length >= 5) return;
     setSubjectData({
@@ -57,10 +56,10 @@ export default function Page() {
           <div className="flex flex-col gap-2">
             <label
               htmlFor=""
-              className="text-zinc-600">Nombre de la clase</label>
+              className="text-zinc-600 text-xl">Nombre de la clase</label>
             <input
               type="text"
-              className="bg-gray-200 py-2 px-4 rounded-lg focus-visible:outline-none"
+              className="bg-gray-200 py-3 px-4 rounded-lg focus-visible:outline-none"
               placeholder="Escribe el nombre de la materia"
               value={subjectData.name}
               onChange={(e) => setSubjectData({ ...subjectData, name: e.target.value })}
@@ -85,7 +84,7 @@ export default function Page() {
             className="bg-primaryColor text-white py-2 px-4 rounded-md"
             onClick={handleAddInput}>Agregar campo</button>
         </main>
-        <div className="flex flex-col gap-4 max-w-[500px]">
+        <div className="flex flex-col gap-4 max-w-[500px] justify-between">
           <SubjectCard
             name={subjectData.name}
             teacher="Diego Martínez García"
@@ -94,6 +93,7 @@ export default function Page() {
             lessTimeActs={0}
             lowTimeActs={0}
           />
+          <button className="w-full bg-primaryColor text-white py-3 rounded-md">Crear clase</button>
         </div>
       </div>
     </>
