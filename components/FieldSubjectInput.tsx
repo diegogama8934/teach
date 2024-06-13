@@ -86,6 +86,8 @@ export default function FieldSubjectInput({ tag, subjectData, setSubjectData, in
         }}
         onKeyDown={(e) => {
           if (e.key == "Enter") handleAddInput();
+          if (e.ctrlKey && e.key == "ArrowUp") handleFieldUp(index);
+          if (e.ctrlKey && e.key == "ArrowDown") handleFieldDown(index);
         }} />
       <button
         className="flex justify-center items-center bg-red-600 rounded-md p-2"

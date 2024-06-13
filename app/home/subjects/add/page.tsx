@@ -1,17 +1,9 @@
 "use client"
 import Header from "@/components/Header";
-import { useDebugValue, useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { bgCardColors, textCardColors } from "@/utils/Card";
 import SubjectCard from "@/components/SubjectCard";
 import FieldSubjectInput from "@/components/FieldSubjectInput";
-
-
-interface extraInput {
-  id: string
-  dataName: string
-  dataValue: string
-}
 
 interface subjectData {
   name: string
@@ -71,7 +63,8 @@ export default function Page() {
               className="bg-gray-200 py-2 px-4 rounded-lg focus-visible:outline-none"
               placeholder="Escribe el nombre de la materia"
               value={subjectData.name}
-              onChange={(e) => setSubjectData({ ...subjectData, name: e.target.value })} />
+              onChange={(e) => setSubjectData({ ...subjectData, name: e.target.value })}
+              onKeyDown={(e) => { if (e.key == "Enter" && subjectData.tags.length == 0) handleAddInput() }} />
           </div>
           {
             subjectData.tags.length != 0 ? (

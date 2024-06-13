@@ -48,7 +48,7 @@ function CardWithTags(name: string, teacher: string, tags: Tag[], onTimeActs: nu
     <div className="h-80 w-[420px] bg-zinc-50 rounded-xl flex flex-col justify-start items-center gap-4 p-6">
       <div className="w-full">
         <div className="flex flex-col gap-2">
-          <h3 className="text-2xl font-bold text-primaryColor w-full text-left">{name}</h3>
+          <h3 className="text-2xl font-bold text-primaryColor w-full text-left">{name.length != 0 ? name : "Nombre de la materia"}</h3>
           <p className="">{teacher}</p>
         </div>
         {
