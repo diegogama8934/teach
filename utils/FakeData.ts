@@ -1,6 +1,8 @@
-export const subjectsAsTeacher = [
+export const fakeSubjectsAsTeacher = [
     {
         name: "Node JS",
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -18,6 +20,8 @@ export const subjectsAsTeacher = [
     },
     {
         name: "React JS",
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -35,6 +39,8 @@ export const subjectsAsTeacher = [
     },
     {
         name: "Angular",
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -52,6 +58,8 @@ export const subjectsAsTeacher = [
     },
     {
         name: "Vue JS",
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -69,6 +77,8 @@ export const subjectsAsTeacher = [
     },
     {
         name: "Python",
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -86,6 +96,8 @@ export const subjectsAsTeacher = [
     },
     {
         name: "Java",
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -103,6 +115,8 @@ export const subjectsAsTeacher = [
     },
     {
         name: "C#",
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -120,12 +134,14 @@ export const subjectsAsTeacher = [
     }
 ];
 
-export const subjectsAsStudent = [
+export const fakeSubjectsAsStudent = [
     {
         name: "Algebra lineal",
         onTimeActs: 2,
         lessTimeActs: 3,
         lowTimeActs: 7,
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -146,6 +162,8 @@ export const subjectsAsStudent = [
         onTimeActs: 3,
         lessTimeActs: 2,
         lowTimeActs: 5,
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -166,6 +184,8 @@ export const subjectsAsStudent = [
         onTimeActs: 4,
         lessTimeActs: 1,
         lowTimeActs: 6,
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -186,6 +206,8 @@ export const subjectsAsStudent = [
         onTimeActs: 5,
         lessTimeActs: 0,
         lowTimeActs: 4,
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -206,6 +228,8 @@ export const subjectsAsStudent = [
         onTimeActs: 2,
         lessTimeActs: 4,
         lowTimeActs: 3,
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -226,6 +250,8 @@ export const subjectsAsStudent = [
         onTimeActs: 1,
         lessTimeActs: 5,
         lowTimeActs: 6,
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -246,6 +272,8 @@ export const subjectsAsStudent = [
         onTimeActs: 3,
         lessTimeActs: 2,
         lowTimeActs: 7,
+        textColor: "",
+        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",

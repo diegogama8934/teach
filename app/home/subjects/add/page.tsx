@@ -2,21 +2,9 @@
 import Header from "@/components/Header";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { subjectData } from "@/utils/Interfaces";
 import SubjectCard from "@/components/SubjectCard";
 import FieldSubjectInput from "@/components/FieldSubjectInput";
-
-interface subjectData {
-  name: string
-  textColor: string
-  backgroundColor: string
-  tags: tag[]
-}
-
-interface tag {
-  id: string
-  name: string
-  value: string
-}
 
 export default function Page() {
 

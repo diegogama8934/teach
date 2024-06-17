@@ -1,14 +1,21 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { subjectsAsStudent, subjectsAsTeacher } from "@/utils/FakeData";
+import { fakeSubjectsAsStudent, fakeSubjectsAsTeacher } from "@/utils/FakeData";
+import { subjectData, tag } from "@/utils/Interfaces";
 import SubjectCard from "@/components/SubjectCard";
 import Header from "@/components/Header";
 
 export default function Page() {
-  const [subjects, setSubjects] = useState<String[]>(["xd"]);
+  const [subjects, setSubjects] = useState<{ subjectsAsStudent: subjectData[], subjectsAsTeacher: subjectData[] } | null>(null);
 
-
+  useEffect(() => {
+    // Get subjects from the API
+    setSubjects({
+      subjectsAsStudent: fakeSubjectsAsStudent,
+      subjectsAsTeacher: fakeSubjectsAsTeacher
+    });
+  }, []);
   return (
     <>
 
@@ -16,12 +23,12 @@ export default function Page() {
 
       <main className="flex-1 w-full bg-white rounded-3xl p-8">
         {
-          subjectsAsStudent &&
+          subjects?.subjectsAsStudent &&
           (
             <div className="w-full flex flex-wrap gap-4 mb-16">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que tomas</h2>
               {
-                subjectsAsStudent.map((subject, index) => (
+                subjects.subjectsAsStudent.map((subject, index) => (
                   <SubjectCard
                     key={index}
                     name={subject.name}
@@ -36,28 +43,29 @@ export default function Page() {
           )
         }
         {
-          subjectsAsTeacher &&
+          subjects?.subjectsAsTeacher &&
           (
 
             <div className="w-full flex flex-wrap gap-4">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que impartes</h2>
               {
-                subjectsAsTeacher.map((subject, index) => (
+                subjects.subjectsAsTeacher.map((subject, index) => (
                   <SubjectCard key={index} name={subject.name} teacher="Diego Martínez García" tags={subject.tags} />
                 ))
               }
             </div>
 
           )
-          // :
-          // (
-          //   <div className="flex justify-center items-center flex-col h-full">
-          //     <span className="material-symbols-rounded !text-[#C0C0C0] inline-block !text-[140px]">tv_off</span>
-          //     <p className="text-[#C0C0C0] text-3xl max-w-96 text-center">
-          //       Aún no estás inscrito o impartes alguna materia
-          //     </p>
-          //   </div>
-          // )
+        }
+        {
+          (!subjects) && (
+            <div className="flex justify-center items-center flex-col h-full">
+              <span className="material-symbols-rounded !text-[#C0C0C0] inline-block !text-[140px]">tv_off</span>
+              <p className="text-[#C0C0C0] text-3xl max-w-96 text-center">
+                Aún no estás inscrito o impartes alguna materia
+              </p>
+            </div>
+          )
         }
       </main>
     </>
