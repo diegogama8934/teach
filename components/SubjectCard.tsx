@@ -7,7 +7,7 @@ interface Tag {
 interface SubjectCardProps {
   name: string
   teacher: string
-  tags?: Tag[]
+  tags: Tag[]
   onTimeActs?: number
   lessTimeActs?: number
   lowTimeActs?: number
@@ -15,7 +15,7 @@ interface SubjectCardProps {
 
 export default function SubjectCard({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs }: SubjectCardProps) {
 
-  if (tags) return CardWithTags(name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs);
+  if (tags?.length > 0) return CardWithTags(name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs);
 
   return Card(name, teacher, onTimeActs, lessTimeActs, lowTimeActs);
 
@@ -32,12 +32,15 @@ function Card(
       <h3 className="text-2xl font-bold text-primaryColor">{name.length != 0 ? name : "Nombre de la materia"}</h3>
       <p className="bg-primaryColor w-full text-center text-white py-2">{teacher}</p>
       {
-        (onTimeActs || lessTimeActs || lowTimeActs) &&
-        <div className="flex gap-2">
-          <div className="w-12 h-12 bg-red-500 text-white">{lowTimeActs}</div>
-          <div className="w-12 h-12 bg-amber-500 text-white">{lessTimeActs}</div>
-          <div className="w-12 h-12 bg-green-500 text-white">{onTimeActs}</div>
-        </div>
+        (onTimeActs || lessTimeActs || lowTimeActs) ?
+          (<div className="flex gap-2">
+            <div className="w-12 h-12 bg-red-500 text-white">{lowTimeActs}</div>
+            <div className="w-12 h-12 bg-amber-500 text-white">{lessTimeActs}</div>
+            <div className="w-12 h-12 bg-green-500 text-white">{onTimeActs}</div>
+          </div>) :
+          (
+            <></>
+          )
       }
     </div>
   );
@@ -52,18 +55,22 @@ function CardWithTags(name: string, teacher: string, tags: Tag[], onTimeActs: nu
           <p className="text-light text-zinc-500">{teacher}</p>
         </div>
         {
-          (onTimeActs || lessTimeActs || lowTimeActs) &&
-          <div className="flex gap-2">
-            <button className="w-8 h-8 bg-red-500 text-white flex justify-center items-center hover:scale-110 transition-all rounded-md">
-              <span>{lowTimeActs}</span>
-            </button>
-            <button className="w-8 h-8 bg-amber-500 text-white flex justify-center items-center hover:scale-110 transition-all rounded-md">
-              <span>{lessTimeActs}</span>
-            </button>
-            <button className="w-8 h-8 bg-green-500 text-white flex justify-center items-center hover:scale-110 transition-all rounded-md">
-              <span>{onTimeActs}</span>
-            </button>
-          </div>
+          (onTimeActs || lessTimeActs || lowTimeActs) ?
+            <div className="flex gap-2">
+              <button className="w-8 h-8 bg-red-500 text-white flex justify-center items-center hover:scale-110 transition-all rounded-md">
+                <span>{lowTimeActs}</span>
+              </button>
+              <button className="w-8 h-8 bg-amber-500 text-white flex justify-center items-center hover:scale-110 transition-all rounded-md">
+                <span>{lessTimeActs}</span>
+              </button>
+              <button className="w-8 h-8 bg-green-500 text-white flex justify-center items-center hover:scale-110 transition-all rounded-md">
+                <span>{onTimeActs}</span>
+              </button>
+            </div>
+            :
+            (
+              <></>
+            )
         }
       </div>
       <ul className="w-full">

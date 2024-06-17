@@ -72,6 +72,7 @@ export default function FieldSubjectInput({ tag, subjectData, setSubjectData, in
           id={`${tag.id}-1`}
           type="text"
           value={tag.name}
+          autoFocus
           className="bg-gray-200 py-3 px-4 rounded-lg focus-visible:outline-none w-full"
           placeholder="Horario"
           onChange={(e) => {
