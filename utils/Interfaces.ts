@@ -3,11 +3,11 @@ export interface subjectData {
     textColor: string
     backgroundColor: string
     tags: tag[]
-    onTimeActs?:number
+    onTimeActs?: number
     lessTimeActs?: number
     lowTimeActs?: number
 }
-  
+
 export interface tag {
     id?: string
     name: string

@@ -5,6 +5,8 @@ import { fakeSubjectsAsStudent, fakeSubjectsAsTeacher } from "@/utils/FakeData";
 import { subjectData, tag } from "@/utils/Interfaces";
 import SubjectCard from "@/components/SubjectCard";
 import Header from "@/components/Header";
+import { ModalGetIntoAClass } from "@/components/ModalGetIntoAClass";
+import Link from "next/link";
 
 export default function Page() {
   const [subjects, setSubjects] = useState<{ subjectsAsStudent: subjectData[], subjectsAsTeacher: subjectData[] } | null>(null);
@@ -19,7 +21,7 @@ export default function Page() {
   return (
     <>
 
-      <Header title="Mis clases" secondaryAction={SecondaryAction()} primaryAction={PrimaryAction()} />
+      <Header title="Mis clases" secondaryAction={<ModalGetIntoAClass />} primaryAction={<PrimaryAction />} />
 
       <main className="flex-1 w-full bg-white rounded-3xl p-8">
         {
@@ -75,20 +77,11 @@ export default function Page() {
 function PrimaryAction(): JSX.Element {
   const router = useRouter();
   return (
-    <button
-      onClick={() => router.push("/home/subjects/add")}
+    <Link
+      href="/home/subjects/add"
       className="bg-primaryColor border-primaryColor px-4 py-2 border-[1px] text-white rounded-md flex items-center gap-2">
       <span className="inline-block text-sm">Crear una clase</span>
       <span className="material-symbols-rounded !text-white inline-block !text-[18px]">add_circle</span>
-    </button>
-  );
-}
-
-function SecondaryAction(): JSX.Element {
-  return (
-    <button className="bg-transparent border-primaryColor px-4 py-2 border-[1px] text-primaryColor rounded-md flex items-center gap-2">
-      <span className="inline-block text-sm">Ingresa a una clase</span>
-      <span className="material-symbols-rounded !text-primaryColor inline-block !text-[18px]">arrow_circle_up</span>
-    </button>
+    </Link>
   );
 }
