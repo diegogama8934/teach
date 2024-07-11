@@ -1,23 +1,30 @@
-"use client"
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { fakeSubjectsAsStudent, fakeSubjectsAsTeacher } from "@/utils/FakeData";
-import { subjectData, tag } from "@/utils/Interfaces";
 import SubjectCard from "@/components/SubjectCard";
 import Header from "@/components/Header";
 import { ModalGetIntoAClass } from "@/components/ModalGetIntoAClass";
 import Link from "next/link";
+import { Metadata } from "next";
 
-export default function Page() {
-  const [subjects, setSubjects] = useState<{ subjectsAsStudent: subjectData[], subjectsAsTeacher: subjectData[] } | null>(null);
+export const metadata: Metadata = {
+  title: "Mis clases",
+  description: "Panel de clases de usuario"
+}
 
-  useEffect(() => {
-    // Get subjects from the API
-    setSubjects({
-      subjectsAsStudent: fakeSubjectsAsStudent,
-      subjectsAsTeacher: fakeSubjectsAsTeacher
-    });
-  }, []);
+async function getSubjectsByUserId() {
+  // TODO: In the future this need to receive the user ID
+
+  // when db exists, query the db to get user subjects by ID
+
+  return ({ fakeSubjectsAsStudent, fakeSubjectsAsTeacher });
+}
+
+export default async function Page() {
+
+  const {
+    fakeSubjectsAsStudent: subjectsAsStudent,
+    fakeSubjectsAsTeacher: subjectsAsTeacher
+  } = await getSubjectsByUserId();
+
   return (
     <>
 
@@ -25,12 +32,12 @@ export default function Page() {
 
       <main className="flex-1 w-full bg-white rounded-3xl p-8">
         {
-          subjects?.subjectsAsStudent &&
+          subjectsAsStudent &&
           (
             <div className="w-full flex flex-wrap gap-4 mb-16">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que tomas</h2>
               {
-                subjects.subjectsAsStudent.map((subject, index) => (
+                subjectsAsStudent.map((subject, index) => (
                   <SubjectCard
                     key={index}
                     name={subject.name}
@@ -45,13 +52,13 @@ export default function Page() {
           )
         }
         {
-          subjects?.subjectsAsTeacher &&
+          subjectsAsTeacher &&
           (
 
             <div className="w-full flex flex-wrap gap-4">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que impartes</h2>
               {
-                subjects.subjectsAsTeacher.map((subject, index) => (
+                subjectsAsTeacher.map((subject, index) => (
                   <SubjectCard key={index} name={subject.name} teacher="Diego Martínez García" tags={subject.tags} />
                 ))
               }
@@ -60,7 +67,7 @@ export default function Page() {
           )
         }
         {
-          (!subjects) && (
+          (!subjectsAsStudent && !subjectsAsTeacher) && (
             <div className="flex justify-center items-center flex-col h-full">
               <span className="material-symbols-rounded !text-[#C0C0C0] inline-block !text-[140px]">tv_off</span>
               <p className="text-[#C0C0C0] text-3xl max-w-96 text-center">
@@ -75,7 +82,6 @@ export default function Page() {
 }
 
 function PrimaryAction(): JSX.Element {
-  const router = useRouter();
   return (
     <Link
       href="/home/subjects/add"
