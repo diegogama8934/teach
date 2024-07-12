@@ -1,3 +1,5 @@
+import { bgCardColors, textCardColors } from "@/utils/Card"
+
 interface Tag {
   id?: string
   name: string

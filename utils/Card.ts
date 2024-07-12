@@ -1,35 +1,35 @@
-export const bgCardColors:string[] = [
-    "bg-softColor1",
-    "bg-softColor2",
-    "bg-softColor3",
-    "bg-softColor4",
-    "bg-softColor5",
-    "bg-softColor6",
-    "bg-softColor7",
-    "bg-softColor8",
-    "bg-softColor9",
-    "bg-softColor10",
-    "bg-softColor11",
-    "bg-softColor12",
-    "bg-softColor13",
-    "bg-softColor14",
-    "bg-softColor15"
-];
+export const bgCardColors: Record<number, string> = {
+    1: "bg-softColor1",
+    2: "bg-softColor2",
+    3: "bg-softColor3",
+    4: "bg-softColor4",
+    5: "bg-softColor5",
+    6: "bg-softColor6",
+    7: "bg-softColor7",
+    8: "bg-softColor8",
+    9: "bg-softColor9",
+    10: "bg-softColor10",
+    11: "bg-softColor11",
+    12: "bg-softColor12",
+    13: "bg-softColor13",
+    14: "bg-softColor14",
+    15: "bg-softColor15"
+};
 
-export const textCardColors:string[] = [
-    "text-softColor1",
-    "text-softColor2",
-    "text-softColor3",
-    "text-softColor4",
-    "text-softColor5",
-    "text-softColor6",
-    "text-softColor7",
-    "text-softColor8",
-    "text-softColor9",
-    "text-softColor10",
-    "text-softColor11",
-    "text-softColor12",
-    "text-softColor13",
-    "text-softColor14",
-    "text-softColor15"
-];
+export const textCardColors: Record<number, string> = {
+    1: "text-softColor1",
+    2: "text-softColor2",
+    3: "text-softColor3",
+    4: "text-softColor4",
+    5: "text-softColor5",
+    6: "text-softColor6",
+    7: "text-softColor7",
+    8: "text-softColor8",
+    9: "text-softColor9",
+    10: "text-softColor10",
+    11: "text-softColor11",
+    12: "text-softColor12",
+    13: "text-softColor13",
+    14: "text-softColor14",
+    15: "text-softColor15"
+};
