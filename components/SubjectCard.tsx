@@ -1,4 +1,4 @@
-import { bgCardColors, textCardColors } from "@/utils/Card"
+import { subjectData } from "@/utils/Interfaces"
 
 interface Tag {
   id?: string
@@ -15,24 +15,19 @@ interface SubjectCardProps {
   lowTimeActs?: number
 }
 
-export default function SubjectCard({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs }: SubjectCardProps) {
+export default function SubjectCard(Props: subjectData) {
 
-  if (tags?.length > 0) return CardWithTags(name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs);
+  if (Props.tags?.length > 0) return <CardWithTags {...Props} />;
 
-  return Card(name, teacher, onTimeActs, lessTimeActs, lowTimeActs);
+  return <Card {...Props} />;
 
 }
 
-function Card(
-  name: string,
-  teacher: string,
-  onTimeActs: number | undefined,
-  lessTimeActs: number | undefined,
-  lowTimeActs: number | undefined) {
+function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs }: SubjectCardProps) {
   return (
     <div className="h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg">
-      <h3 className="text-2xl font-bold text-primaryColor">{name.length != 0 ? name : "Nombre de la materia"}</h3>
-      <p className="bg-primaryColor w-full text-center text-white py-2">{teacher}</p>
+      <h3 className={"text-2xl fontbold text-primaryColor"}>{name.length != 0 ? name : "Nombre de la materia"}</h3>
+      <p className={"bg-primaryColor w-full text-center text-white py-2"}>{teacher}</p>
       {
         (onTimeActs || lessTimeActs || lowTimeActs) ?
           (<div className="flex gap-2">
@@ -48,12 +43,12 @@ function Card(
   );
 }
 
-function CardWithTags(name: string, teacher: string, tags: Tag[], onTimeActs: number | undefined, lessTimeActs: number | undefined, lowTimeActs: number | undefined) {
+function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs }: SubjectCardProps) {
   return (
     <div className="h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow">
       <div className="w-full flex justify-between items-center">
         <div className="flex flex-col gap-2">
-          <h3 className="text-2xl font-bold text-primaryColor w-full text-left">{name.length != 0 ? name : "Nombre de la materia"}</h3>
+          <h3 className="text-2xl font-bold w-full text-left text-primaryColor">{name.length != 0 ? name : "Nombre de la materia"}</h3>
           <p className="text-light text-zinc-500">{teacher}</p>
         </div>
         {

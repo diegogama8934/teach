@@ -1,8 +1,7 @@
 export interface subjectData {
     name: string
-    textColor: string
-    backgroundColor: string
     tags: tag[]
+    teacher: string
     onTimeActs?: number
     lessTimeActs?: number
     lowTimeActs?: number

@@ -2,14 +2,14 @@
 import { useState } from "react";
 import type { subjectData } from "@/utils/Interfaces";
 import { FormCreateSubject } from "./FormCreateSubject";
+import { bgCardColors, textCardColors } from "@/utils/Card";
 import SubjectCard from "../SubjectCard";
 
 export function Content() {
   const [form, setForm] = useState<subjectData>({
     name: "",
-    textColor: "",
-    backgroundColor: "",
-    tags: []
+    tags: [],
+    teacher: "Diego Martínez García"
   });
 
   function handleSubjectNameInput({ target }: React.ChangeEvent<HTMLInputElement>) {
@@ -45,7 +45,6 @@ export function Content() {
   }
 
   return (
-
     <div className="flex gap-4 h-full">
 
       <FormCreateSubject
@@ -60,7 +59,7 @@ export function Content() {
       />
 
       <div className="flex flex-col gap-4 max-w-[500px] justify-between">
-        <SubjectCard {...form} teacher="Diego Martínez García" />
+        <SubjectCard {...form} />
         <button className="w-full bg-primaryColor text-white py-3 rounded-md">Crear clase</button>
       </div>
 

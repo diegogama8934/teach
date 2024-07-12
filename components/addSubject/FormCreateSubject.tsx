@@ -26,7 +26,7 @@ export function FormCreateSubject({
 
 
   return (
-    <form className="h-full w-full bg-zinc-50 rounded-3xl p-8" >
+    <form className="h-full w-full bg-zinc-50 rounded-3xl p-8" onSubmit={(e) => e.preventDefault()}>
       <div className="flex flex-col gap-2">
         <label
           htmlFor=""
