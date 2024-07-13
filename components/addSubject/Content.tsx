@@ -1,12 +1,11 @@
 "use client"
 import { useState } from "react";
-import type { subjectData } from "@/utils/Interfaces";
+import type { subjectCard } from "@/utils/Interfaces";
 import { FormCreateSubject } from "./FormCreateSubject";
-import { bgCardColors, textCardColors } from "@/utils/Card";
 import SubjectCard from "../SubjectCard";
 
 export function Content() {
-  const [form, setForm] = useState<subjectData>({
+  const [form, setForm] = useState<subjectCard>({
     name: "",
     tags: [],
     teacher: "Diego Martínez García"
