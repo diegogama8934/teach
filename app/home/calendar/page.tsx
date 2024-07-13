@@ -1,4 +1,10 @@
 import Header from "@/components/Header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Calendario",
+  description: "Calendario del usuario"
+}
 
 export default async function CalendarPage() {
 

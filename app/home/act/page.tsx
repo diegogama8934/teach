@@ -1,4 +1,10 @@
 import Header from "@/components/Header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Actividades y tareas",
+  description: "Panel de clases de usuario"
+}
 
 async function getEvidences() {
 
