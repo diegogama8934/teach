@@ -30,7 +30,7 @@ export default async function Page() {
 
       <Header title="Mis clases" secondaryAction={<ModalGetIntoAClass />} primaryAction={<PrimaryAction />} />
 
-      <main className="flex-1 w-full bg-white rounded-3xl p-8">
+      <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8">
         {
           subjectsAsStudent &&
           (

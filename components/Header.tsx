@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 export default function Header({
   title, primaryAction, secondaryAction
 }: {
-  title: string, primaryAction: ReactNode, secondaryAction: ReactNode
+  title: string, primaryAction: ReactNode, secondaryAction?: ReactNode
 }) {
 
 

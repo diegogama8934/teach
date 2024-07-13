@@ -1,15 +1,20 @@
-"use client"
 import Header from "@/components/Header";
-import { useState } from "react";
 
-export default function Page() {
-  const [evidences, setEvidences] = useState<[]>();
+async function getEvidences() {
+
+
+  return ([]);
+}
+
+export default async function Page() {
+
+  const evidences = await getEvidences();
 
   return (
     <>
       <Header title="Actividades y tareas" secondaryAction={SecondaryAction()} primaryAction={PrimaryAction()} />
 
-      <main className="h-full w-full bg-white rounded-3xl">
+      <main className="flex flex-1 w-full bg-white rounded-3xl p-8">
         {
           evidences?.length ?
             (
@@ -19,7 +24,7 @@ export default function Page() {
             )
             :
             (
-              <div className="flex justify-center items-center flex-col h-full">
+              <div className="flex justify-center items-center flex-col h-full w-full">
                 <span className="material-symbols-rounded !text-[#C0C0C0] inline-block !text-[140px]">tv_off</span>
                 <p className="text-[#C0C0C0] text-3xl max-w-96 text-center">
                   Aún no estás inscrito o impartes alguna materia
