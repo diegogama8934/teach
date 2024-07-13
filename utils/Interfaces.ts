@@ -1,10 +1,12 @@
-export interface subjectData {
-    name: string
-    tags: tag[]
-    teacher: string
-    onTimeActs?: number
+export interface subjectCard {
+    isCreating?: boolean
     lessTimeActs?: number
     lowTimeActs?: number
+    name: string
+    onTimeActs?: number
+    subjectId?: string
+    tags: tag[]
+    teacher: string
 }
 
 export interface tag {

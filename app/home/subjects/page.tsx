@@ -45,7 +45,9 @@ export default async function Page() {
                     tags={subject.tags}
                     lessTimeActs={subject.lessTimeActs}
                     lowTimeActs={subject.lowTimeActs}
-                    onTimeActs={subject.onTimeActs} />
+                    onTimeActs={subject.onTimeActs}
+                    subjectId={subject.name}
+                  />
                 ))
               }
             </div>

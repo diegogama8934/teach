@@ -23,13 +23,13 @@ export default function Header({
         {primaryAction}
         <div className="relative">
           <button
-            className="flex gap-2 items-center px-4 py-2 rounded-md hover:bg-white hover:cursor-pointer transition-colors"
+            className="flex gap-2 items-center rounded-md hover:scale-110 hover:cursor-pointer transition-all"
             onClick={() => setIsDropdownOpen(prev => !prev)}
           >
             <Image
               src="/yo3.jpeg"
-              width={32}
-              height={32}
+              width={40}
+              height={40}
               alt="Foto de perfil"
               className="aspect-square object-cover rounded-full"
             />

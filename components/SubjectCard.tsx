@@ -1,31 +1,21 @@
-import { subjectData } from "@/utils/Interfaces"
+"use client";
+import { subjectCard } from "@/utils/Interfaces"
+import { useRouter } from "next/navigation";
 
-interface Tag {
-  id?: string
-  name: string
-  value: string
+export default function SubjectCard(props: subjectCard) {
+  if (props.tags?.length > 0) return <CardWithTags {...props} />;
+  return <Card {...props} />;
 }
 
-interface SubjectCardProps {
-  name: string
-  teacher: string
-  tags: Tag[]
-  onTimeActs?: number
-  lessTimeActs?: number
-  lowTimeActs?: number
-}
-
-export default function SubjectCard(Props: subjectData) {
-
-  if (Props.tags?.length > 0) return <CardWithTags {...Props} />;
-
-  return <Card {...Props} />;
-
-}
-
-function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs }: SubjectCardProps) {
+function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs, isCreating, subjectId }: subjectCard) {
+  const router = useRouter();
   return (
-    <div className="h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg">
+    <div
+      className="h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg"
+      onClick={() => {
+        if (!isCreating) router.push(`/home/subjects/${subjectId!}`);
+      }}
+    >
       <h3 className={"text-2xl fontbold text-primaryColor"}>{name.length != 0 ? name : "Nombre de la materia"}</h3>
       <p className={"bg-primaryColor w-full text-center text-white py-2"}>{teacher}</p>
       {
@@ -43,9 +33,15 @@ function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs }: SubjectC
   );
 }
 
-function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs }: SubjectCardProps) {
+function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, isCreating, subjectId }: subjectCard) {
+  const router = useRouter();
   return (
-    <div className="h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow">
+    <div
+      className="h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow"
+      onClick={() => {
+        if (!isCreating) router.push(`/home/subjects/${subjectId!}`);
+      }}
+    >
       <div className="w-full flex justify-between items-center">
         <div className="flex flex-col gap-2">
           <h3 className="text-2xl font-bold w-full text-left text-primaryColor">{name.length != 0 ? name : "Nombre de la materia"}</h3>
