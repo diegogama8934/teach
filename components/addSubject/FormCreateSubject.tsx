@@ -1,8 +1,8 @@
 "use client";
 import FieldSubjectInput from "../FieldSubjectInput";
-import type { subjectData } from "@/utils/Interfaces";
+import type { subjectCard } from "@/utils/Interfaces";
 
-interface Props extends subjectData {
+interface Props extends subjectCard {
   onSubjectNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   onAddTag: () => void
   onTagRemove: (tagId: string) => void
