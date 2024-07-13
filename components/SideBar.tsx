@@ -12,7 +12,7 @@ export function SideBar() {
   return (
     <aside
       className={
-        `bg-white p-4 flex flex-col h-screen items-center justify-between transition-all z-10  absolute rounded
+        `bg-primaryColor p-4 flex flex-col h-screen items-center justify-between transition-all z-10  absolute rounded-r-2xl
         ${isOpen ? "w-56" : "w-20"}
         ${isOpen ? "shadow-xl" : ""}`
       }
@@ -21,7 +21,7 @@ export function SideBar() {
     >
       <div className={`flex flex-col gap-4 w-full`}>
         <div className="w-10 h-10 flex justify-center items-center">
-          <span className="material-symbols-rounded !text-green-800">cast_for_education</span>
+          <span className="material-symbols-rounded !text-white">cast_for_education</span>
         </div>
         <div className="flex flex-col gap-2 w-full">
           {
@@ -30,20 +30,20 @@ export function SideBar() {
                 key={href}
                 href={href}
                 className={`
-                  h-12 text-center p-3 rounded-md flex justify-start  w-full items-center 
-                  ${pathName.includes(href) ? "bg-primaryColor hover:bg-primaryColor/90" : "hover:bg-zinc-200"}
+                  h-12 text-center p-3 rounded-md flex justify-start  w-full items-center hover:scale-105 transition-all
+                  ${pathName.includes(href) && "bg-zinc-50 hover:bg-zinc-100"}
                 `}
               >
                 <span className={`
                   material-symbols-rounded 
-                  ${pathName.includes(href) ? "!text-zinc-50" : "!text-primaryColor"}
+                  ${pathName.includes(href) ? "!text-primaryColor" : "!text-zinc-50 hover:!text-pr"}
                 `}>
                   {icon}
                 </span>
                 <span className={`
                   ml-4 line-clamp-1 font-bold 
                   ${isOpen ? "inline-block" : "hidden"}
-                  ${pathName.includes(href) ? "text-zinc-50" : "text-primaryColor"}
+                  ${pathName.includes(href) ? "text-primaryColor" : "text-zinc-50"}
                 `}>
                   {name}
                 </span>
@@ -52,9 +52,22 @@ export function SideBar() {
           }
         </div>
       </div>
-      <Link href="home/settings" className="h-10 text-center p-3 rounded-md hover:bg-zinc-200 flex justify-start  w-full items-center">
-        <span className="material-symbols-rounded !text-green-800">settings</span>
-        <span className={`ml-4 line-clamp-1 text-primaryColor font-bold ${isOpen ? "inline-block" : "hidden"}`}>Configuración</span>
+      <Link
+        href="home/settings"
+        className={`
+          h-12 text-center p-3 rounded-md flex justify-start  w-full items-center hover:scale-105 transition-all
+          ${pathName.includes("home/settings") && "bg-zinc-50 hover:bg-zinc-100"}
+        `}
+      >
+        <span className={`
+                  material-symbols-rounded 
+                  ${pathName.includes("home/settings") ? "!text-primaryColor" : "!text-zinc-50 hover:!text-pr"}
+                `}>settings</span>
+        <span className={`
+                  ml-4 line-clamp-1 font-bold 
+                  ${isOpen ? "inline-block" : "hidden"}
+                  ${pathName.includes("home/settings") ? "text-primaryColor" : "text-zinc-50"}
+                `}>Configuración</span>
       </Link>
     </aside>
   );
