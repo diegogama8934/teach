@@ -12,8 +12,8 @@ export function SideBar() {
   return (
     <aside
       className={
-        `bg-zinc-100 p-4 flex flex-col h-screen items-center justify-between transition-all z-10  absolute
-        ${isOpen ? "w-72" : "w-20"}
+        `bg-white p-4 flex flex-col h-screen items-center justify-between transition-all z-10  absolute rounded
+        ${isOpen ? "w-56" : "w-20"}
         ${isOpen ? "shadow-xl" : ""}`
       }
       onMouseOver={() => setIsOpen(true)}
@@ -30,13 +30,13 @@ export function SideBar() {
                 key={href}
                 href={href}
                 className={`
-                  h-10 text-center p-3 rounded-md flex justify-start  w-full items-center 
+                  h-12 text-center p-3 rounded-md flex justify-start  w-full items-center 
                   ${pathName.includes(href) ? "bg-primaryColor hover:bg-primaryColor/90" : "hover:bg-zinc-200"}
                 `}
               >
                 <span className={`
                   material-symbols-rounded 
-                  ${pathName.includes(href) ? "!text-zinc-50" : "!text-green-800"}
+                  ${pathName.includes(href) ? "!text-zinc-50" : "!text-primaryColor"}
                 `}>
                   {icon}
                 </span>

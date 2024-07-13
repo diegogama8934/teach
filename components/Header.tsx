@@ -1,7 +1,8 @@
 "use client"
-
-import { ReactNode } from "react";
-
+import Image from "next/image";
+import React, { ReactNode } from "react";
+import { dropdownButtons } from "@/constants/dropdownButtons";
+import { useState } from "react";
 
 export default function Header({
   title, primaryAction, secondaryAction
@@ -9,7 +10,7 @@ export default function Header({
   title: string, primaryAction: ReactNode, secondaryAction?: ReactNode
 }) {
 
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
     <header className="flex justify-between items-center">
 
@@ -20,11 +21,70 @@ export default function Header({
         {secondaryAction}
 
         {primaryAction}
-
-        <button className="px-4 py-2 rounded-md hover:bg-white hover:cursor-pointer transition-colors">
-          Diego Martínez García
-        </button>
+        <div className="relative">
+          <button
+            className="flex gap-2 items-center px-4 py-2 rounded-md hover:bg-white hover:cursor-pointer transition-colors"
+            onClick={() => setIsDropdownOpen(prev => !prev)}
+          >
+            <Image
+              src="/yo3.jpeg"
+              width={32}
+              height={32}
+              alt="Foto de perfil"
+              className="aspect-square object-cover rounded-full"
+            />
+          </button>
+          {isDropdownOpen && <Dropdown />}
+        </div>
       </div>
     </header>
+  );
+}
+
+function Dropdown() {
+
+  return (
+
+    <div className={`
+      flex flex-col w-60 absolute bg-zinc-100 top-14 right-0 shadow-2xl rounded-2xl p-4 gap-2
+      `}
+    >
+      <div className="flex gap-2 items-center">
+        <Image
+          src="/yo3.jpeg"
+          width={36}
+          height={36}
+          alt="Foto de perfil"
+          className="aspect-square object-cover rounded-full"
+        />
+        <div className="flex flex-col justify-start">
+          <span className="text-zinc-700 line-clamp-1">Diego Martínez García</span>
+          <small className="text-zinc-500 line-clamp-1">diegogama8934@gmail.com</small>
+        </div>
+      </div>
+
+      <hr />
+
+      {
+        dropdownButtons.map(({ name, icon }, index, arr) => (
+          <button
+            key={index}
+            className="text-zinc-700 p-2 text-start hover:bg-zinc-200 transition-all flex items-center gap-3 rounded"
+          >
+            <span className="material-symbols-rounded !text-zinc-700">{icon}</span>
+            {name}
+          </button>
+        ))
+      }
+
+      <hr />
+
+      <button
+        className="text-zinc-700 p-2 text-start hover:bg-zinc-200 transition-all flex items-center gap-2 rounded"
+      >
+        <span className="material-symbols-rounded !text-zinc-700">logout</span>
+        Cerrar sesión
+      </button>
+    </div>
   );
 }
