@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Link from "next/link";
-import { Content } from "@/components/addSubject/Content";
+import { Content } from "@/components/CreateSubject/Content";
 
 
 

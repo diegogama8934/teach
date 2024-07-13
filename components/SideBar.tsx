@@ -7,6 +7,7 @@ import Link from "next/link";
 export function SideBar() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isUserInSubject, setIsUserInClass] = useState(false);
   const pathName = usePathname();
 
   return (
@@ -60,14 +61,14 @@ export function SideBar() {
         `}
       >
         <span className={`
-                  material-symbols-rounded 
-                  ${pathName.includes("home/settings") ? "!text-primaryColor" : "!text-zinc-50 hover:!text-pr"}
-                `}>settings</span>
+          material-symbols-rounded 
+          ${pathName.includes("home/settings") ? "!text-primaryColor" : "!text-zinc-50 hover:!text-pr"}
+        `}>settings</span>
         <span className={`
-                  ml-4 line-clamp-1 font-bold 
-                  ${isOpen ? "inline-block" : "hidden"}
-                  ${pathName.includes("home/settings") ? "text-primaryColor" : "text-zinc-50"}
-                `}>Configuración</span>
+          ml-4 line-clamp-1 font-bold 
+          ${isOpen ? "inline-block" : "hidden"}
+          ${pathName.includes("home/settings") ? "text-primaryColor" : "text-zinc-50"}
+        `}>Configuración</span>
       </Link>
     </aside>
   );

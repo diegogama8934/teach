@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react";
 import type { subjectCard } from "@/utils/Interfaces";
-import { FormCreateSubject } from "./FormCreateSubject";
-import SubjectCard from "../SubjectCard";
+import { FormCreateSubject } from ".";
+import { SubjectCard } from ".";
 
 export function Content() {
   const [form, setForm] = useState<subjectCard>({

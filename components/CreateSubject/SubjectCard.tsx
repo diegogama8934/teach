@@ -1,21 +1,13 @@
-"use client";
 import { subjectCard } from "@/utils/Interfaces"
-import { useRouter } from "next/navigation";
 
-export default function SubjectCard(props: subjectCard) {
+export function SubjectCard(props: subjectCard) {
   if (props.tags?.length > 0) return <CardWithTags {...props} />;
   return <Card {...props} />;
 }
 
-function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs, isCreating, subjectId }: subjectCard) {
-  const router = useRouter();
+function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs }: subjectCard) {
   return (
-    <div
-      className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg ${!isCreating && "hover:cursor-pointer"}`}
-      onClick={() => {
-        if (!isCreating) router.push(`/home/subjects/${subjectId!}`);
-      }}
-    >
+    <div className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg`}>
       <h3 className={"text-2xl fontbold text-primaryColor"}>{name.length != 0 ? name : "Nombre de la materia"}</h3>
       <p className={"bg-primaryColor w-full text-center text-white py-2"}>{teacher}</p>
       {
@@ -33,14 +25,10 @@ function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs, isCreating
   );
 }
 
-function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, isCreating, subjectId }: subjectCard) {
-  const router = useRouter();
+function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs }: subjectCard) {
   return (
     <div
-      className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow transition-all ${!isCreating && "hover:cursor-pointer hover:bg-zinc-50 hover:scale-105"}`}
-      onClick={() => {
-        if (!isCreating) router.push(`/home/subjects/${subjectId!}`);
-      }}
+      className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow transition-all`}
     >
       <div className="w-full flex justify-between items-center">
         <div className="flex flex-col gap-2">

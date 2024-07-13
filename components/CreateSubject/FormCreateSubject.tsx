@@ -1,5 +1,5 @@
 "use client";
-import FieldSubjectInput from "../FieldSubjectInput";
+import { SubjectTagField } from ".";
 import type { subjectCard } from "@/utils/Interfaces";
 
 interface Props extends subjectCard {
@@ -42,7 +42,7 @@ export function FormCreateSubject({
       {
         tags.length != 0 ? (
           tags.map((tag, index) => (
-            <FieldSubjectInput
+            <SubjectTagField
               key={tag.id}
               tag={tag}
               index={index}

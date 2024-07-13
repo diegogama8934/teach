@@ -13,7 +13,7 @@ interface Props {
   onTagChangeValue: (newValue: string, index: number) => void
 }
 
-export default function FieldSubjectInput({
+export function SubjectTagField({
   index,
   onAddTag,
   onTagChangeName,
