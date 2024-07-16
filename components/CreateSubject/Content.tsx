@@ -1,47 +1,23 @@
 "use client"
-import { useState } from "react";
-import type { subjectCard } from "@/utils/Interfaces";
-import { FormCreateSubject } from ".";
-import { SubjectCard } from ".";
+import { FormCreateSubject, SubjectCard } from ".";
+import { useCreateSubject } from "@/hooks";
 
 export function Content() {
-  const [form, setForm] = useState<subjectCard>({
+
+  const {
+    form,
+    handleAddInput,
+    handleRemoveTag,
+    handleSubjectNameInput,
+    handleTagDown,
+    handleTagNameChange,
+    handleTagUp,
+    handleTagValueChange
+  } = useCreateSubject({
     name: "",
     tags: [],
-    teacher: "Diego Martínez García"
+    teacher: "Diego Martínez García" // this value will come from auth context in the future
   });
-
-  function handleSubjectNameInput({ target }: React.ChangeEvent<HTMLInputElement>) {
-    const { value } = target;
-    setForm({ ...form, name: value });
-  }
-
-  function handleAddInput() {
-    if (form.tags.length >= 5) return;
-    setForm({ ...form, tags: [...form.tags, { id: crypto.randomUUID(), name: "", value: "" }] });
-  }
-
-  function handleRemoveTag(tagId: string) {
-    setForm({ ...form, tags: form.tags.filter(tag => tag.id != tagId) });
-  }
-
-  function handleTagUp(index: number) {
-    if (index == 0) return;
-    setForm({ ...form, tags: [...form.tags].map((tag, i, tags) => i == index ? tags[index - 1] : i == (index - 1) ? tags[index] : tag) })
-  }
-
-  function handleTagDown(index: number) {
-    if (index == (form.tags.length - 1)) return;
-    setForm({ ...form, tags: [...form.tags].map((tag, i, tags) => i == index ? tags[index + 1] : i == (index + 1) ? tags[index] : tag) })
-  }
-
-  function handleTagNameChange(newName: string, index: number) {
-    setForm({ ...form, tags: [...form.tags].map((tag, i) => i == index ? { ...tag, name: newName } : tag) });
-  }
-
-  function handleTagValueChange(newValue: string, index: number) {
-    setForm({ ...form, tags: [...form.tags].map((tag, i) => i == index ? { ...tag, value: newValue } : tag) });
-  }
 
   return (
     <div className="flex gap-4 h-full">
