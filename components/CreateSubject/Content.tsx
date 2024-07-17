@@ -4,16 +4,7 @@ import { useCreateSubject } from "@/hooks";
 
 export function Content() {
 
-  const {
-    form,
-    handleAddInput,
-    handleRemoveTag,
-    handleSubjectNameInput,
-    handleTagDown,
-    handleTagNameChange,
-    handleTagUp,
-    handleTagValueChange
-  } = useCreateSubject({
+  const { form, handleAddInput, handleRemoveTag, handleSubjectNameInput, handleTagDown, handleTagNameChange, handleTagUp, handleTagValueChange } = useCreateSubject({
     name: "",
     tags: [],
     teacher: "Diego Martínez García" // this value will come from auth context in the future
