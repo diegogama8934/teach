@@ -13,36 +13,37 @@ export function SideBar() {
   return (
     <aside
       className={
-        `bg-primaryColor p-4 flex flex-col h-screen items-center justify-between transition-all z-10  absolute rounded-r-2xl
-        ${isOpen ? "w-56" : "w-20"}
-        ${isOpen ? "shadow-xl" : ""}`
+        `bg-primaryColor p-3 flex flex-col h-screen items-center justify-between transition-all z-10  absolute
+        ${isOpen ? "w-56" : "w-16"}
+        ${isOpen ? "shadow-[0_0_60px_0_rgba(0,0,0,0.6)]" : ""}`
       }
       onMouseOver={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
       <div className={`flex flex-col gap-4 w-full`}>
         <div className="w-10 h-10 flex justify-center items-center">
-          <span className="material-symbols-rounded !text-white">cast_for_education</span>
+          <span className="material-symbols-rounded !text-white !text-xl">cast_for_education</span>
         </div>
-        <div className="flex flex-col gap-2 w-full">
+        <div className="flex flex-col gap-3 w-full">
           {
             mainPages.map(({ href, icon, name }) => (
               <Link
                 key={href}
                 href={href}
                 className={`
-                  h-12 text-center p-3 rounded-md flex justify-start  w-full items-center hover:scale-105 transition-all
+                  h-10 text-center p-2 rounded-md flex justify-center w-full items-center hover:scale-105 transition-all
                   ${pathName.includes(href) && "bg-zinc-50 hover:bg-zinc-100"}
+                  ${isOpen && "!justify-start"}
                 `}
               >
                 <span className={`
-                  material-symbols-rounded 
+                  material-symbols-rounded !text-xl
                   ${pathName.includes(href) ? "!text-primaryColor" : "!text-zinc-50 hover:!text-pr"}
                 `}>
                   {icon}
                 </span>
                 <span className={`
-                  ml-4 line-clamp-1 font-bold 
+                  ml-4 line-clamp-1 font-medium 
                   ${isOpen ? "inline-block" : "hidden"}
                   ${pathName.includes(href) ? "text-primaryColor" : "text-zinc-50"}
                 `}>
@@ -61,11 +62,11 @@ export function SideBar() {
         `}
       >
         <span className={`
-          material-symbols-rounded 
+          material-symbols-rounded !text-xl
           ${pathName.includes("home/settings") ? "!text-primaryColor" : "!text-zinc-50 hover:!text-pr"}
         `}>settings</span>
         <span className={`
-          ml-4 line-clamp-1 font-bold 
+          ml-4 line-clamp-1 font-medium 
           ${isOpen ? "inline-block" : "hidden"}
           ${pathName.includes("home/settings") ? "text-primaryColor" : "text-zinc-50"}
         `}>Configuración</span>

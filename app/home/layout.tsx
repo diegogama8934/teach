@@ -9,7 +9,7 @@ export default function HomeLayout({ children }: { children: ReactNode }) {
 
       <SideBar />
 
-      <div className="flex flex-col flex-1 p-4 gap-4 h-screen overflow-auto ml-20">
+      <div className="flex flex-col flex-1 p-4 gap-4 h-screen overflow-auto ml-16">
         {children}
       </div>
 
