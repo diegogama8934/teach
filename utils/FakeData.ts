@@ -1,8 +1,8 @@
-export const fakeSubjectsAsTeacher = [
+import { subjectCard } from "./Interfaces";
+
+export const fakeSubjectsAsTeacher: subjectCard[] = [
     {
         name: "Node JS",
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -16,12 +16,13 @@ export const fakeSubjectsAsTeacher = [
                 name: "Horario",
                 value: "Viernes 10:00 - 14:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "Teacher",
+        isCreating: false,
     },
     {
         name: "React JS",
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -35,12 +36,13 @@ export const fakeSubjectsAsTeacher = [
                 name: "Horario",
                 value: "Lunes 08:00 - 12:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "Teacher",
+        isCreating: false,
     },
     {
         name: "Angular",
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -54,12 +56,13 @@ export const fakeSubjectsAsTeacher = [
                 name: "Horario",
                 value: "Martes 10:00 - 14:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "Teacher",
+        isCreating: false,
     },
     {
         name: "Vue JS",
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -73,12 +76,13 @@ export const fakeSubjectsAsTeacher = [
                 name: "Horario",
                 value: "Miércoles 12:00 - 16:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "Teacher",
+        isCreating: false,
     },
     {
         name: "Python",
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -92,12 +96,13 @@ export const fakeSubjectsAsTeacher = [
                 name: "Horario",
                 value: "Jueves 14:00 - 18:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "Teacher",
+        isCreating: false,
     },
     {
         name: "Java",
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -111,12 +116,13 @@ export const fakeSubjectsAsTeacher = [
                 name: "Horario",
                 value: "Viernes 08:00 - 12:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "Teacher",
+        isCreating: false,
     },
     {
         name: "C#",
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -130,18 +136,19 @@ export const fakeSubjectsAsTeacher = [
                 name: "Horario",
                 value: "Lunes 14:00 - 18:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "Teacher",
+        isCreating: false,
     }
 ];
 
-export const fakeSubjectsAsStudent = [
+export const fakeSubjectsAsStudent: subjectCard[] = [
     {
         name: "Algebra lineal",
         onTimeActs: 2,
         lessTimeActs: 3,
         lowTimeActs: 7,
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -155,15 +162,16 @@ export const fakeSubjectsAsStudent = [
                 name: "Horario",
                 value: "Viernes 10:00 - 14:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "",
+        isCreating: false,
     },
     {
         name: "Cálculo diferencial",
         onTimeActs: 3,
         lessTimeActs: 2,
         lowTimeActs: 5,
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -177,15 +185,16 @@ export const fakeSubjectsAsStudent = [
                 name: "Horario",
                 value: "Lunes 08:00 - 12:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "",
+        isCreating: false,
     },
     {
         name: "Física",
         onTimeActs: 4,
         lessTimeActs: 1,
         lowTimeActs: 6,
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -199,15 +208,16 @@ export const fakeSubjectsAsStudent = [
                 name: "Horario",
                 value: "Martes 10:00 - 14:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "",
+        isCreating: false,
     },
     {
         name: "Programación",
         onTimeActs: 5,
         lessTimeActs: 0,
         lowTimeActs: 4,
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -221,15 +231,16 @@ export const fakeSubjectsAsStudent = [
                 name: "Horario",
                 value: "Miércoles 12:00 - 16:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "",
+        isCreating: false,
     },
     {
         name: "Química",
         onTimeActs: 2,
         lessTimeActs: 4,
         lowTimeActs: 3,
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -243,15 +254,16 @@ export const fakeSubjectsAsStudent = [
                 name: "Horario",
                 value: "Jueves 14:00 - 18:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "",
+        isCreating: false,
     },
     {
         name: "Historia",
         onTimeActs: 1,
         lessTimeActs: 5,
         lowTimeActs: 6,
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -265,15 +277,16 @@ export const fakeSubjectsAsStudent = [
                 name: "Horario",
                 value: "Viernes 08:00 - 12:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "",
+        isCreating: false,
     },
     {
         name: "Literatura",
         onTimeActs: 3,
         lessTimeActs: 2,
         lowTimeActs: 7,
-        textColor: "",
-        backgroundColor: "",
         tags: [
             {
                 name: "Grupo",
@@ -287,6 +300,9 @@ export const fakeSubjectsAsStudent = [
                 name: "Horario",
                 value: "Lunes 14:00 - 18:00"
             }
-        ]
+        ],
+        accentColor: "",
+        teacher: "",
+        isCreating: false,
     }
 ];

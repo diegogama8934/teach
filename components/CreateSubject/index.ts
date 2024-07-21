@@ -1,4 +1,5 @@
+export * from "./Card"
+export * from "./CardWithTags"
 export * from "./Content"
 export * from "./FormCreateSubject"
-export * from "./SubjectCard"
 export * from "./SubjectTagField"

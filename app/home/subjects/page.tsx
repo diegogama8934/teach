@@ -1,5 +1,5 @@
 import { fakeSubjectsAsStudent, fakeSubjectsAsTeacher } from "@/utils/FakeData";
-import SubjectCard from "@/components/SubjectCard";
+import { Card, CardWithTags } from "@/components/CreateSubject";
 import Header from "@/components/Header";
 import { ModalGetIntoAClass } from "@/components/ModalGetIntoAClass";
 import Link from "next/link";
@@ -11,10 +11,6 @@ export const metadata: Metadata = {
 }
 
 async function getSubjectsByUserId() {
-  // TODO: In the future this need to receive the user ID
-
-  // when db exists, query the db to get user subjects by ID
-
   return ({ fakeSubjectsAsStudent, fakeSubjectsAsTeacher });
 }
 
@@ -37,18 +33,7 @@ export default async function Page() {
             <div className="w-full flex flex-wrap gap-4 mb-16">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que tomas</h2>
               {
-                subjectsAsStudent.map((subject, index) => (
-                  <SubjectCard
-                    key={index}
-                    name={subject.name}
-                    teacher="Diego Martínez García"
-                    tags={subject.tags}
-                    lessTimeActs={subject.lessTimeActs}
-                    lowTimeActs={subject.lowTimeActs}
-                    onTimeActs={subject.onTimeActs}
-                    subjectId={subject.name}
-                  />
-                ))
+                subjectsAsStudent.map((subject, index) => subject.tags.length == 0 ? <Card key={index} {...subject} /> : <CardWithTags key={index} {...subject} />)
               }
             </div>
           )
@@ -60,9 +45,7 @@ export default async function Page() {
             <div className="w-full flex flex-wrap gap-4">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que impartes</h2>
               {
-                subjectsAsTeacher.map((subject, index) => (
-                  <SubjectCard key={index} name={subject.name} teacher="Diego Martínez García" tags={subject.tags} />
-                ))
+                subjectsAsTeacher.map((subject, index) => subject.tags.length == 0 ? <Card key={index} {...subject} /> : <CardWithTags key={index} {...subject} />)
               }
             </div>
 
