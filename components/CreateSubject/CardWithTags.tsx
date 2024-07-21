@@ -1,11 +1,14 @@
 import { subjectCard } from "@/utils/Interfaces";
 
-export function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, accentColor }: subjectCard) {
+export function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, accentColor, isCreating }: subjectCard) {
 
 
   return (
     <div
-      className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow transition-all`}
+      className={`
+        h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow transition-all
+        ${!isCreating && "hover:scale-105 hover:bg-zinc-50 cursor-pointer"}
+      `}
     >
       <div className="w-full flex justify-between items-center">
         <div className="flex flex-col gap-2">
