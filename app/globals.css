@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --primary-color: #02735E;
+    --soft-color-1: #81BED9;
+    --soft-color-2: #98B4FF;
+    --soft-color-3: #9386A9;
+    --soft-color-4: #AA88B5;
+    --soft-color-5: #AE7186;
+    --soft-color-6: #FFACA5;
+    --soft-color-7: #FFBFA3;
+    --soft-color-8: #FBCF8C;
+    --soft-color-9: #F9E29D;
+    --soft-color-10: #E6F0A6;
+    --soft-color-11: #8FB177;
+    --soft-color-12: #4D5F66;
+    --soft-color-13: #496260;
+    --soft-color-14: #587670;
+    --soft-color-15: #6B947D;
+}
+
+.card-subject-name-primary {
+    color: var(--primary-color)
+}
+
+.card-subject-name-1 {
+    color: var(--soft-color-1)
+}
+
+.card-subject-name-2 {
+    color: var(--soft-color-2)
+}
+
+.card-subject-name-3 {
+    color: var(--soft-color-3)
+}
+
+.card-subject-name-4 {
+    color: var(--soft-color-4)
+}
+
+.card-subject-name-5 {
+    color: var(--soft-color-5)
+}
+
+.card-subject-name-6 {
+    color: var(--soft-color-6)
+}
+
+.card-subject-name-7 {
+    color: var(--soft-color-7)
+}
+
+.card-subject-name-8 {
+    color: var(--soft-color-8)
+}
+
+.card-subject-name-9 {
+    color: var(--soft-color-9)
+}
+
+.card-subject-name-10 {
+    color: var(--soft-color-10)
+}
+
+.card-subject-name-11 {
+    color: var(--soft-color-11)
+}
+
+.card-subject-name-12 {
+    color: var(--soft-color-12)
+}
+
+.card-subject-name-13 {
+    color: var(--soft-color-13)
+}
+
+.card-subject-name-14 {
+    color: var(--soft-color-14)
+}
+
+.card-subject-name-15 {
+    color: var(--soft-color-15)
+}
+
+
+.card-subject-teacher-primary {}

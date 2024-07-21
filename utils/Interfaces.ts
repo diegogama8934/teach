@@ -7,6 +7,7 @@ export interface subjectCard {
     subjectId?: string
     tags: tag[]
     teacher: string
+    accentColor: string
 }
 
 export interface tag {

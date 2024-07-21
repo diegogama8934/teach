@@ -7,7 +7,8 @@ export function Content() {
   const { form, handleAddInput, handleRemoveTag, handleSubjectNameInput, handleTagDown, handleTagNameChange, handleTagUp, handleTagValueChange } = useCreateSubject({
     name: "",
     tags: [],
-    teacher: "Diego Martínez García" // this value will come from auth context in the future
+    teacher: "Diego Martínez García", // this value will come from auth context in the future
+    accentColor: ""
   });
 
   return (

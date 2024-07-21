@@ -5,10 +5,10 @@ export function SubjectCard(props: subjectCard) {
   return <Card {...props} />;
 }
 
-function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs }: subjectCard) {
+function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs, accentColor }: subjectCard) {
   return (
     <div className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg`}>
-      <h3 className={"text-2xl fontbold text-primaryColor"}>{name.length != 0 ? name : "Nombre de la materia"}</h3>
+      <h3 className={`text-2xl fontbold ${accentColor}`}>{name.length != 0 ? name : "Nombre de la materia"}</h3>
       <p className={"bg-primaryColor w-full text-center text-white py-2"}>{teacher}</p>
       {
         (onTimeActs || lessTimeActs || lowTimeActs) ?
@@ -25,7 +25,7 @@ function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs }: subjectC
   );
 }
 
-function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs }: subjectCard) {
+function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, accentColor }: subjectCard) {
   return (
     <div
       className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow transition-all`}
