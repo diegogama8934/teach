@@ -38,9 +38,9 @@ export function Content() {
 
         {
           form.tags.length == 0 ? (
-            <Card {...form}></Card>
+            <Card {...form} isCreating></Card>
           ) : (
-            <CardWithTags {...form}></CardWithTags>
+            <CardWithTags {...form} isCreating></CardWithTags>
           )
         }
 

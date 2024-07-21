@@ -33,7 +33,13 @@ export default async function Page() {
             <div className="w-full flex flex-wrap gap-4 mb-16">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que tomas</h2>
               {
-                subjectsAsStudent.map((subject, index) => subject.tags.length == 0 ? <Card key={index} {...subject} /> : <CardWithTags key={index} {...subject} />)
+                subjectsAsStudent.map((subject, index) => (
+                  subject.tags.length == 0 ? (
+                    <Card key={index} {...subject} isCreating={false} />
+                  ) : (
+                    <CardWithTags key={index} {...subject} isCreating={false} />
+                  )
+                ))
               }
             </div>
           )
@@ -45,7 +51,13 @@ export default async function Page() {
             <div className="w-full flex flex-wrap gap-4">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que impartes</h2>
               {
-                subjectsAsTeacher.map((subject, index) => subject.tags.length == 0 ? <Card key={index} {...subject} /> : <CardWithTags key={index} {...subject} />)
+                subjectsAsTeacher.map((subject, index) => (
+                  subject.tags.length == 0 ? (
+                    <Card key={index} {...subject} isCreating={false} />
+                  ) : (
+                    <CardWithTags key={index} {...subject} isCreating={false} />
+                  )
+                ))
               }
             </div>
 
