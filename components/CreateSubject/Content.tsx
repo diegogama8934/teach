@@ -17,7 +17,8 @@ export function Content() {
     name: "",
     tags: [],
     teacher: "Diego Martínez García", // this value will come from auth context in the future
-    accentColor: ""
+    accentColor: "",
+    userId: "DiegoUserId"
   });
 
   return (
