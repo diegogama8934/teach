@@ -20,6 +20,7 @@ export const fakeSubjectsAsTeacher: subjectCard[] = [
         accentColor: "",
         teacher: "Teacher",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "React JS",
@@ -40,6 +41,7 @@ export const fakeSubjectsAsTeacher: subjectCard[] = [
         accentColor: "",
         teacher: "Teacher",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Angular",
@@ -60,6 +62,7 @@ export const fakeSubjectsAsTeacher: subjectCard[] = [
         accentColor: "",
         teacher: "Teacher",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Vue JS",
@@ -80,6 +83,7 @@ export const fakeSubjectsAsTeacher: subjectCard[] = [
         accentColor: "",
         teacher: "Teacher",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Python",
@@ -100,6 +104,7 @@ export const fakeSubjectsAsTeacher: subjectCard[] = [
         accentColor: "",
         teacher: "Teacher",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Java",
@@ -120,6 +125,7 @@ export const fakeSubjectsAsTeacher: subjectCard[] = [
         accentColor: "",
         teacher: "Teacher",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "C#",
@@ -140,6 +146,7 @@ export const fakeSubjectsAsTeacher: subjectCard[] = [
         accentColor: "",
         teacher: "Teacher",
         isCreating: false,
+        userId: "DiegoUserId"
     }
 ];
 
@@ -166,6 +173,7 @@ export const fakeSubjectsAsStudent: subjectCard[] = [
         accentColor: "",
         teacher: "",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Cálculo diferencial",
@@ -189,6 +197,7 @@ export const fakeSubjectsAsStudent: subjectCard[] = [
         accentColor: "",
         teacher: "",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Física",
@@ -212,6 +221,7 @@ export const fakeSubjectsAsStudent: subjectCard[] = [
         accentColor: "",
         teacher: "",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Programación",
@@ -235,6 +245,7 @@ export const fakeSubjectsAsStudent: subjectCard[] = [
         accentColor: "",
         teacher: "",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Química",
@@ -258,6 +269,7 @@ export const fakeSubjectsAsStudent: subjectCard[] = [
         accentColor: "",
         teacher: "",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Historia",
@@ -281,6 +293,7 @@ export const fakeSubjectsAsStudent: subjectCard[] = [
         accentColor: "",
         teacher: "",
         isCreating: false,
+        userId: "DiegoUserId"
     },
     {
         name: "Literatura",
@@ -304,5 +317,6 @@ export const fakeSubjectsAsStudent: subjectCard[] = [
         accentColor: "",
         teacher: "",
         isCreating: false,
+        userId: "DiegoUserId"
     }
 ];

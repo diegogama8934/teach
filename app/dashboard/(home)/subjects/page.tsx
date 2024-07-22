@@ -81,7 +81,7 @@ export default async function Page() {
 function PrimaryAction(): JSX.Element {
   return (
     <Link
-      href="/home/subjects/add"
+      href="/dashboard/subjects/add"
       className="bg-primaryColor border-primaryColor px-4 py-2 border-[1px] text-white rounded-md flex items-center gap-2">
       <span className="inline-block text-sm">Crear una clase</span>
       <span className="material-symbols-rounded !text-white inline-block !text-[18px]">add_circle</span>

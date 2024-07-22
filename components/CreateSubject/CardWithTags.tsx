@@ -1,9 +1,9 @@
 import { subjectCard } from "@/utils/Interfaces";
 import Link from "next/link";
 
-export function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, accentColor, isCreating }: subjectCard) {
+export function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, accentColor, isCreating, userId }: subjectCard) {
 
-  console.log(isCreating);
+  console.log(userId);
 
   if (isCreating) return (
     <div
@@ -50,7 +50,7 @@ export function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lo
         h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow transition-all
         ${!isCreating && "hover:scale-105 hover:bg-zinc-50 cursor-pointer"}
       `}
-      href={`/home/subjects/${name}`}
+      href={`/dashboard/subject/${name}/${userId}`}
     >
       <div className="w-full flex justify-between items-center">
         <div className="flex flex-col gap-2">

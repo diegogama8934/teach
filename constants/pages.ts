@@ -2,27 +2,27 @@ import { page } from "@/interfaces/pages";
 
 export const mainPages: page[] = [
     {
-        href: "/home/subjects",
+        href: "/dashboard/subjects",
         icon: "home",
         name: "Inicio"
     },
     {
-        href: "/home/act",
+        href: "/dashboard/act",
         icon: "menu_book",
         name: "Actividades"
     },
     {
-        href: "/home/classroom",
+        href: "/dashboard/classroom",
         icon: "background_replace",
         name: "Salón de clases"
     },
     {
-        href: "/home/evaluations",
+        href: "/dashboard/evaluations",
         icon: "description",
         name: "Evaluaciones"
     },
     {
-        href: "/home/calendar",
+        href: "/dashboard/calendar",
         icon: "calendar_month",
         name: "Calendario"
     }
