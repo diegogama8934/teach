@@ -28,12 +28,22 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="relative">
-        <div className="flex flex-col gap-12 absolute top-24 left-48 w-[500px]">
-          <h2 className="text-3xl font-medium leading-relaxed">Una manera sencilla de administrar clases virtuales</h2>
+      <div className="flex items-center py-24 px-48 justify-between">
+        <div className="flex flex-col gap-12 w-[600px]">
+          <h2 className="text-4xl font-semibold leading-relaxed text-zinc-700">Una manera sencilla de administrar clases virtuales</h2>
           <Link href="" className="bg-primaryColor text-white rounded p-4 w-48 text-center">Regístrate</Link>
         </div>
+        <Image
+          src="/hero-image.png"
+          width={400}
+          height={400}
+          alt="someone studying in laptop"
+          className="rounded-full aspect-square object-cover shadow-2xl"
+        />
       </div>
     </div>
   );
 }
+
+
+// absolute top-24 left-48
