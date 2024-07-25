@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { SideBar } from "@/components/SideBar";
+import { SideBar } from "@/components/atoms";
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
 

@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
+import { Header } from "@/components/atoms";
 import Link from "next/link";
-import { Content } from "@/components/CreateSubject/Content";
+import { Content } from "@/components/molecules/Content";
 
 
 
