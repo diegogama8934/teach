@@ -13,8 +13,7 @@ export function SideBar() {
     <aside
       className={
         `bg-primaryColor p-3 flex flex-col h-screen items-center justify-between transition-all z-10  absolute
-        ${isOpen ? "w-56" : "w-16"}
-        ${isOpen ? "shadow-[0_0_60px_0_rgba(0,0,0,0.6)]" : ""}`
+        ${isOpen ? "w-56 shadow-[0_0_60px_0_rgba(0,0,0,0.6)]" : "w-16"}`
       }
       onMouseOver={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
