@@ -33,7 +33,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
                 login(token);
             }
         } else {
-            if (pathname.includes("dashboard")) router.push("/login");
+            if (pathname.includes("dashboard")) router.push("/");
         }
     }, [user, pathname]);
 

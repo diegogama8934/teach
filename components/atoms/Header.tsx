@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { ReactNode } from "react";
 import { dropdownButtons } from "@/constants/dropdownButtons";
 import { useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "@/context/UserContext";
 
 export function Header({
   title, primaryAction, secondaryAction
@@ -43,6 +45,8 @@ export function Header({
 
 function Dropdown() {
 
+  const { logout } = useContext(UserContext);
+
   return (
 
     <div className={`
@@ -81,6 +85,7 @@ function Dropdown() {
 
       <button
         className="text-zinc-700 p-2 text-start hover:bg-zinc-200 transition-all flex items-center gap-2 rounded"
+        onClick={logout}
       >
         <span className="material-symbols-rounded !text-zinc-700">logout</span>
         Cerrar sesión
