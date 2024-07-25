@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 import { dropdownButtons } from "@/constants/dropdownButtons";
 import { useState } from "react";
 
-export default function Header({
+export function Header({
   title, primaryAction, secondaryAction
 }: {
   title: string, primaryAction: ReactNode, secondaryAction?: ReactNode
