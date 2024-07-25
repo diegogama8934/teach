@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <div className="flex gap-8">
           <Link href={""} className="">Inicia sesión</Link>
-          <Link href={""} className="">Regístrate</Link>
+          <Link href={"/signin"} className="">Regístrate</Link>
         </div>
       </header>
 
