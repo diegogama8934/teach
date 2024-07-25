@@ -1,7 +1,11 @@
+"use client";
 import { subjectCard } from "@/utils/Interfaces";
 import Link from "next/link";
+import { useContext } from "react";
+import { UserContext } from "@/context/UserContext";
 
 export function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, accentColor, isCreating, userId }: subjectCard) {
+  const { getUserRolInSubject } = useContext(UserContext);
 
   if (isCreating) return (
     <div
@@ -48,7 +52,7 @@ export function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lo
         h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow transition-all
         ${!isCreating && "hover:scale-105 hover:bg-zinc-50 cursor-pointer"}
       `}
-      href={`/dashboard/subject/${name}/${userId}`}
+      href={`/dashboard/subject/${name}/${getUserRolInSubject(name)}`}
     >
       <div className="w-full flex justify-between items-center">
         <div className="flex flex-col gap-2">

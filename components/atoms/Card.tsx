@@ -26,7 +26,7 @@ export function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs, acc
       h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg
       ${!isCreating && "hover:scale-105 hover:bg-zinc-50 cursor-pointer"}
     `}
-      href={`/dashboard/subject/${name}/${userId}`}
+      href={`/dashboard/subject/${name}`}
     >
       <h3 className={`text-2xl fontbold ${accentColor}`}>{name.length != 0 ? name : "Nombre de la materia"}</h3>
       <p className={"bg-primaryColor w-full text-center text-white py-2"}>{teacher}</p>

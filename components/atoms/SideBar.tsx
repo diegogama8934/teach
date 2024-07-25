@@ -7,7 +7,6 @@ import Link from "next/link";
 export function SideBar() {
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isUserInSubject, setIsUserInClass] = useState(false);
   const pathName = usePathname();
 
   return (
@@ -21,9 +20,9 @@ export function SideBar() {
       onMouseLeave={() => setIsOpen(false)}
     >
       <div className={`flex flex-col gap-4 w-full`}>
-        <div className="w-10 h-10 flex justify-center items-center">
+        <Link href="/" target="_blank" className="w-10 h-10 flex justify-center items-center">
           <span className="material-symbols-rounded !text-white !text-xl">cast_for_education</span>
-        </div>
+        </Link>
         <div className="flex flex-col gap-3 w-full">
           {
             mainPages.map(({ href, icon, name }) => (

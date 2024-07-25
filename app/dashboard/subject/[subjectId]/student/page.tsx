@@ -10,6 +10,9 @@ export default function RedirectPage() {
     const { getUserRolInSubject } = useContext(UserContext);
     const userRolInSubject = getUserRolInSubject(params.subjectId as string);
 
-    if (userRolInSubject == "teacher") { router.push(`/dashboard/subject/${params.subjectId as string}/teacher/announcements`); }
-    if (userRolInSubject == "student") { router.push(`/dashboard/subject/${params.subjectId as string}/student/announcements`); }
+    if (userRolInSubject == "student") {
+        router.push(`/dashboard/subject/${params.subjectId as string}/student/announcements`)
+    } else {
+        router.push("/dashboard/subjects");
+    }
 }
