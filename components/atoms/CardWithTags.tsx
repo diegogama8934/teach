@@ -3,8 +3,6 @@ import Link from "next/link";
 
 export function CardWithTags({ name, teacher, tags, onTimeActs, lessTimeActs, lowTimeActs, accentColor, isCreating, userId }: subjectCard) {
 
-  console.log(userId);
-
   if (isCreating) return (
     <div
       className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-start items-center gap-4 p-6 shadow transition-all`}

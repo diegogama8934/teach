@@ -2,7 +2,6 @@ import { subjectCard } from "@/utils/Interfaces";
 import Link from "next/link";
 
 export function Card({ name, teacher, onTimeActs, lessTimeActs, lowTimeActs, accentColor, isCreating, userId }: subjectCard) {
-  console.log(userId);
 
   if (isCreating) return (
     <div className={`h-80 w-[400px] bg-white rounded-xl flex flex-col justify-center items-center gap-2 shadow-lg`}>

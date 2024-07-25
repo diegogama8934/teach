@@ -1,5 +1,5 @@
 "use client"
-import { FormCreateSubject, Card, CardWithTags } from ".";
+import { FormCreateSubject, Card, CardWithTags } from "../CreateSubject";
 import { useCreateSubject } from "@/hooks";
 
 export function Content() {

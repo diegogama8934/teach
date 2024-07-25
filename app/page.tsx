@@ -23,7 +23,7 @@ export default function Home() {
           <Link href={""} className="text-zinc-700">Guía de usuario</Link>
         </div>
         <div className="flex gap-8">
-          <Link href={""} className="">Inicia sesión</Link>
+          <Link href={"/login"} className="">Inicia sesión</Link>
           <Link href={"/signin"} className="">Regístrate</Link>
         </div>
       </header>
