@@ -1,5 +1,5 @@
 "use client";
-import { SubjectTagField } from "../CreateSubject";
+import { SubjectTagField } from "@/components/atoms";
 import type { subjectCard } from "@/utils/Interfaces";
 
 interface Props extends subjectCard {
