@@ -8,7 +8,7 @@ export default function StudentSubjectLayout({ children }: { children: ReactNode
     <div className="flex relative">
       <StudentSideBar />
 
-      <div className="flex flex-col flex-1 p-4 gap-4 h-screen overflow-auto ml-16">
+      <div className="flex flex-col flex-1 p-4 gap-4 h-screen overflow-auto ml-[88px]">
         {children}
       </div>
     </div>
