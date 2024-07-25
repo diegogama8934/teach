@@ -4,6 +4,7 @@ import { FormLogin } from "@/components/atoms/presentation";
 
 export default function LoginPage() {
 
+  console.log("XD")
 
   return (
     <div className="min-h-screen bg-white py-24 flex flex-col gap-24 items-center">

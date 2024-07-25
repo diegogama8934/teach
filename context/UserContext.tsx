@@ -1,6 +1,6 @@
 "use client"
 import { usePathname, useRouter } from "next/navigation";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 interface User {
     name: string
@@ -13,38 +13,41 @@ interface UserContext {
     login: (token: string) => void
 }
 
-export const UserContext = createContext<UserContext | null>(null);
-
-export const useUser = () => useContext(UserContext);
+export const UserContext = createContext<UserContext>({
+    user: undefined,
+    login: () => { },
+    logout: () => { }
+});
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-    const [user, setUser] = useState<User>();
+    const [user, setUser] = useState<User | undefined>();
     const router = useRouter();
     const pathname = usePathname();
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (token) {
-
             if (user) {
-                if (pathname == "/login") router.push("/home/subjects");
+                if (pathname == "/login") router.push("/dashboard/subjects");
+            } else {
+                login(token);
             }
-
-            login(token);
-
         } else {
-            if (pathname !== "login") router.push("/login");
+            if (pathname.includes("dashboard")) router.push("/login");
         }
-    }, [user, pathname, router]);
+    }, [user, pathname]);
 
     async function logout() {
-        // quitar del localStorage el token
-        // setUser vacío
+        localStorage.removeItem("token");
+        setUser(undefined);
     }
 
     async function login(token: string) {
-        // fetch para verificar el token y todo eso
-        // setUser con datos que vengan de la API
+        localStorage.setItem("token", token);
+        setUser({
+            email: "diegogama8934@gmail.com",
+            name: "Diego Martínez García"
+        });
     }
 
     return (

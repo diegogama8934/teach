@@ -1,5 +1,6 @@
 "use client"
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useContext } from "react";
+import { UserContext } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
 
 export function FormLogin() {
@@ -7,10 +8,12 @@ export function FormLogin() {
   const router = useRouter();
   const [form, setForm] = useState();
 
+  const { login } = useContext(UserContext);
+
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    router.push("");
+    console.log("Handle submit")
+    login("TokenDeTeachJAJAJA");
   }
 
   return (

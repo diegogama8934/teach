@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Assistant } from "next/font/google";
 import "./globals.css";
+import { UserProvider } from "@/context/UserContext";
 
-const inter = Inter({ subsets: ["latin"] });
 const assistant = Assistant({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,7 +20,9 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
       </head>
-      <body className={assistant.className + " h-screen"}>{children}</body>
+      <UserProvider>
+        <body className={assistant.className + " h-screen"}>{children}</body>
+      </UserProvider>
     </html>
   );
 }
