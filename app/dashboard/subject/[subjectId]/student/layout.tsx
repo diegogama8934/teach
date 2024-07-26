@@ -1,4 +1,4 @@
-import { StudentSideBar } from "@/components/atoms/subject";
+import { StudentSideBar } from "@/components";
 import { ReactNode } from "react";
 
 export default function StudentSubjectLayout({ children }: { children: ReactNode }) {

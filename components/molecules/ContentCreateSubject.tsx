@@ -1,6 +1,5 @@
 "use client"
-import { Card, CardWithTags } from "@/components";
-import { FormCreateSubject } from "@/components";
+import { Card, CardWithTags, FormCreateSubject } from "@/components";
 import { useCreateSubject } from "@/hooks";
 
 export function ContentCreateSubject() {

@@ -1,4 +1,4 @@
-import { Header } from "@/components/atoms";
+import { Header } from "@/components";
 
 interface Props {
   params: { subjectId: string }

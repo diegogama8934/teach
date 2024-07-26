@@ -1,9 +1,7 @@
 "use client"
 import Image from "next/image";
-import React, { ReactNode } from "react";
 import { dropdownButtons } from "@/constants/dropdownButtons";
-import { useState } from "react";
-import { useContext } from "react";
+import React, { useState, useContext, ReactNode } from "react";
 import { UserContext } from "@/context/UserContext";
 
 export function Header({
