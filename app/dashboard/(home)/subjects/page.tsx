@@ -1,7 +1,5 @@
 import { fakeSubjectsAsStudent, fakeSubjectsAsTeacher } from "@/utils/FakeData";
-import { Card, CardWithTags } from "@/components/atoms"
-import { Header } from "@/components/atoms";
-import { ModalGetIntoAClass } from "@/components/atoms";
+import { Header, Card, CardWithTags, ModalGetIntoAClass } from "@/components"
 import Link from "next/link";
 import { Metadata } from "next";
 

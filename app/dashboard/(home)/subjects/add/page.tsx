@@ -1,6 +1,5 @@
-import { Header } from "@/components/atoms";
+import { Header, ContentCreateSubject } from "@/components";
 import Link from "next/link";
-import { Content } from "@/components/molecules/Content";
 
 
 
@@ -27,7 +26,7 @@ export default function Page() {
         }
       />
 
-      <Content />
+      <ContentCreateSubject />
     </>
   );
 }

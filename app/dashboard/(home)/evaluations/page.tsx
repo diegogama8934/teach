@@ -1,4 +1,4 @@
-import { Header } from "@/components/atoms";
+import { Header } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

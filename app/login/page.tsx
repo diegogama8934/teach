@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FormLogin } from "@/components/atoms/presentation";
+import { FormLogin } from "@/components";
 
 export default function LoginPage() {
 
