@@ -88,3 +88,7 @@
 
 
 .card-subject-teacher-primary {}
+
+textarea {
+    field-sizing: content;
+}
