@@ -12,7 +12,7 @@ export function AddAnnouncement() {
     <>
       <form>
         <div
-          className="bg-gray-50 hover:bg-gray-100 p-4 flex items-start gap-2 rounded-lg hover:scale-[101%] cursor-text transition-all"
+          className="bg-gray-50 hover:bg-gray-100 p-4 flex items-start gap-2 rounded-lg hover:scale-[101%] cursor-pointer transition-all"
           onClick={() => {
             console.log(textareaInput.current);
             textareaInput.current?.focus()

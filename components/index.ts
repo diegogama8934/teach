@@ -7,7 +7,9 @@ export { FormRegisterAccount } from "@/components/atoms/presentation/FormRegiste
 // Atoms / Subject
 export { AddAnnouncement } from "@/components/atoms/subject/AddAnnouncement";
 export { StudentSideBar } from "@/components/atoms/subject/StudentSideBar";
-
+// Molecules / Subject
+export { AnnouncementsFeed } from "@/components/molecules/subject/AnnouncementsFeed";
+export { Announcement } from "@/components/molecules/subject/Announcement";
 
 
 // Atoms / Home

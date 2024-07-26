@@ -1,4 +1,4 @@
-import { Header, AddAnnouncement } from "@/components";
+import { Header, AddAnnouncement, AnnouncementsFeed } from "@/components";
 interface Props {
   params: { subjectId: string }
 }
@@ -18,8 +18,9 @@ export default async function StudentAnnouncementsPage({ params }: Props) {
 
       <Header title={`${subjectName} - Anuncios de clase`} primaryAction={<></>} />
 
-      <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8">
+      <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8 gap-8">
         <AddAnnouncement />
+        <AnnouncementsFeed />
       </main>
     </>
   );
