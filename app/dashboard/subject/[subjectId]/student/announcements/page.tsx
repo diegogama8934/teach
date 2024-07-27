@@ -1,8 +1,18 @@
 import { Header, AddAnnouncement, Announcement } from "@/components";
 import { annoucement } from "@/interfaces";
 import { FakeAnnoucements } from "@/constants";
+import { Metadata } from "next";
 interface Props {
   params: { subjectId: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  //TODO: getSubjectNameById using params.id and set it like:
+
+  return {
+    title: `${"Subject"} - Anuncios`,
+    description: `Panel de anuncios de clase de la materia ${"Subject"}`
+  }
 }
 
 async function getSubjectNameById(subjectId: string): Promise<string> {
@@ -12,7 +22,6 @@ async function getSubjectNameById(subjectId: string): Promise<string> {
 }
 
 async function getAnnoucementsBySubjectId(subjectId: string): Promise<annoucement[]> {
-
 
 
   return FakeAnnoucements

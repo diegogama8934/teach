@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FormRegisterAccount } from "@/components";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Signin",
+  description: "Crear cuenta en TEACH. Plataforma para clases virtuales"
+}
 
 export default function SignInPage() {
 
