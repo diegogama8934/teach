@@ -8,9 +8,8 @@ export { FormRegisterAccount } from "@/components/atoms/presentation/FormRegiste
 export { AddAnnouncement } from "@/components/atoms/subject/AddAnnouncement";
 export { StudentSideBar } from "@/components/atoms/subject/StudentSideBar";
 export { Announcement } from "@/components/atoms/subject/Announcement";
-export { CommentOnAnnouncement } from "@/components/atoms/subject/CommentOnAnnouncement";
-// Molecules / Subject
-export { AnnouncementsFeed } from "@/components/molecules/subject/AnnouncementsFeed";
+export { CommentsOnAnnouncement } from "@/components/atoms/subject/CommentsOnAnnouncement";
+export { AddCommentOnAnnouncement } from "@/components/atoms/subject/AddCommentOnAnnouncement";
 
 
 // Atoms / Home
