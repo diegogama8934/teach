@@ -1,5 +1,6 @@
-import { Header } from "@/components";
+import { Header, SubjectTopic } from "@/components";
 import { Metadata } from "next";
+import { FakeSubjectsTopics } from "@/constants";
 
 interface Props {
   params: { subjectId: string }
@@ -20,9 +21,15 @@ async function getSubjectNameById(subjectId: string): Promise<string> {
   return "Nombre de la materia";
 }
 
+async function getSubjectContentById(subjectId: string) {
+  // TODO: this need to return all the information that this page will need
+}
+
 export default async function StudentContentPage({ params }: Props) {
 
   const subjectName = await getSubjectNameById(params.subjectId);
+  // Considering deleting const subject name because subjectContent can return the subject name
+  const subjectContent = await getSubjectContentById(params.subjectId);
 
   return (
     <>
@@ -84,32 +91,9 @@ export default async function StudentContentPage({ params }: Props) {
         <section className="flex flex-col gap-4">
           <h2 className="text-2xl text-zinc-400">Temario</h2>
 
-          <div className="flex flex-col gap-2">
-            <h3 className="text-xl text-zinc-400">Unidad 1. Sistemas de ecuaciones lineales</h3>
-            <ul className="flex flex-col gap-2 list-disc ml-4">
-              <li className="text-zinc-600">Ecuaciones lineales</li>
-              <li className="text-zinc-600">Sistemas de ecuaciones lineales</li>
-              <li className="text-zinc-600">Métodos de solución de sistemas de ecuaciones lineales</li>
-              <li className="text-zinc-600">El método de eliminación de Gauss-Jordan</li>
-              <li className="text-zinc-600">Tipos de soluciones en los sistemas de ecuaciones lineales</li>
-              <li className="text-zinc-600">Sistemas de ecuaciones lineales homogéneos</li>
-              <li className="text-zinc-600">Ejercicios con Python, GNU-Octave</li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <h3 className="text-xl text-zinc-400">Unidad 2. Matrices</h3>
-            <ul className="flex flex-col gap-2 list-disc ml-4">
-              <li className="text-zinc-600">Introducción</li>
-              <li className="text-zinc-600">Operaciones con matrices</li>
-              <li className="text-zinc-600">Matrices elementales</li>
-              <li className="text-zinc-600">Transpuesta de una matriz y sus propiedades</li>
-              <li className="text-zinc-600">Matrices diagonales, triangulares y simétricas</li>
-              <li className="text-zinc-600">Aplicación de matrices</li>
-              <li className="text-zinc-600">Ejercicios con Python, GNU-Octave</li>
-            </ul>
-          </div>
-
+          {
+            FakeSubjectsTopics.map((subjectTopic, index) => <SubjectTopic key={index} {...subjectTopic} />)
+          }
         </section>
       </main>
     </>

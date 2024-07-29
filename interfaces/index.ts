@@ -14,3 +14,8 @@ export interface commentOnAnnouncement {
     user: user
     comment: string
 }
+
+export interface subjectTopic {
+    topic: string
+    topicContent: string[]
+}

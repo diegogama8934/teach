@@ -1,5 +1,5 @@
 import { page } from "@/interfaces/pages";
-import { commentOnAnnouncement, annoucement } from "@/interfaces";
+import { commentOnAnnouncement, annoucement, subjectTopic } from "@/interfaces";
 
 export const StudentPages: page[] = [
     {
@@ -117,5 +117,57 @@ export const FakeAnnoucements: annoucement[] = [
           Vivamus egestas posuere lacus a accumsan. Quisque et risus facilisis, imperdiet leo eu, suscipit lacus. Donec sed cursus
           nunc, a viverra magna. Vestibulum imperdiet vitae diam et blandit. Curabitur et pellentesque lectus. Sed non lacus ac justo
           ullamcorper maximus quis et urna. Vivamus eget enim felis. Proin convallis orci diam, ac placerat arcu aliquet non.`
+    }
+]
+
+export const FakeSubjectsTopics: subjectTopic[] = [
+    {
+        topic: "Unidad 1. Sistemas de ecuaciones lineales",
+        topicContent: [
+            "Ecuacione lineales",
+            "Sistemas de ecuaciones lineales",
+            "Métodos de solución de sistemas de ecuaciones lineales",
+            "El método de eliminación de Gauss Jordan",
+            "Tipos de soluciones en los sistemas de ecuacione lineales",
+            "Sistemas de ecuaciones lineales homogéneos",
+            "Ejercicios con Python, GNU-Octave"
+        ]
+    },
+    {
+        topic: "Unidad 2. Matrices",
+        topicContent: [
+            "Introducción",
+            "Operaciones con matrices",
+            "Transpuesta de una matriz y sus propiedades",
+            "Matrices diagonales, triangulares y simétricas",
+            "Aplicación de matrices",
+            "Ejercicios con Python, GNU-Octave"
+        ]
+    },
+    {
+        topic: "Unidad 3. Determinantes e inversas",
+        topicContent: [
+            "La función determinante.",
+            "Teoremas en determinantes.",
+            "Evaluación de determinantes por reducción de renglones.",
+            "Desarrollo por cofactores.",
+            "Regla de Cramer.",
+            "La inversa de una matriz por medio de cofactores.",
+            "La inversa de una matriz por medio del método Gauss-Jordan.",
+            "Teorema en la inversa de una matriz cuadrada.",
+            "Ejercicios con Python, GNU-Octave."
+        ]
+    },
+    {
+        topic: "Unidad 4. Vectores en 2 y 3 dimensiones",
+        topicContent: [
+            "Vectores en el plano.",
+            "Aritmética vectorial.",
+            "Producto punto y proyecciones.",
+            "Producto cruz.",
+            "Rectas y planos en el espacio tridimensional.",
+            "Operaciones con vectores en el espacio.",
+            "Ejercicios con Python, GNU-Octave."
+        ]
     }
 ]
