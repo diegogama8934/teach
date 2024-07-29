@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { Header } from "@/components";
 import { Metadata } from "next";
+import { StudentInClass } from "@/components";
 
 interface Props {
   params: { subjectId: string }
@@ -29,8 +31,8 @@ export default async function TeacherStudentsPage({ params }: Props) {
 
       <Header title={`${subjectName} - Estudiantes`} primaryAction={<></>} />
 
-      <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8">
-
+      <main className="flex flex-col flex-1 gap-4 w-full bg-white rounded-3xl p-8">
+        <StudentInClass />
       </main>
     </>
   );

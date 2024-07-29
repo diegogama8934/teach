@@ -12,6 +12,7 @@ export { Announcement } from "@/components/atoms/subject/Announcement";
 export { CommentsOnAnnouncement } from "@/components/atoms/subject/CommentsOnAnnouncement";
 export { SubjectTopic } from "@/components/atoms/subject/SubjectTopic";
 export { AddCommentOnAnnouncement } from "@/components/atoms/subject/AddCommentOnAnnouncement";
+export { StudentInClass } from "@/components/atoms/subject/StudentInClass";
 
 
 // Atoms / Home
