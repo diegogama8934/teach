@@ -19,3 +19,9 @@ export interface subjectTopic {
     topic: string
     topicContent: string[]
 }
+
+export interface studentInClass {
+    user: user
+    activitiesScore: number
+    assistantScore: number
+}
