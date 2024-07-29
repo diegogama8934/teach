@@ -36,7 +36,7 @@ export const StudentPages: page[] = [
 
 export const TeacherPages: page[] = [
     {
-        href: "/dashboard/subject/[subjectId]/teacher/annoucements",
+        href: "/dashboard/subject/[subjectId]/teacher/announcements",
         icon: "home",
         name: "Anuncios de clase"
     },
@@ -51,7 +51,7 @@ export const TeacherPages: page[] = [
         name: "Evidencias"
     },
     {
-        href: "/dashboard/subject/[subjectId]/teacher/classroom",
+        href: "/dashboard/subject/[subjectId]/teacher/scores",
         icon: "credit_score",
         name: "Calificaciones"
     },
@@ -61,7 +61,7 @@ export const TeacherPages: page[] = [
         name: "Salón de clases"
     },
     {
-        href: "/dashboard/subject/[subjectId]/teacher/tests",
+        href: "/dashboard/subject/[subjectId]/teacher/test",
         icon: "quiz",
         name: "Evaluaciones"
     }
