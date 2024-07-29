@@ -64,6 +64,11 @@ export const TeacherPages: page[] = [
         href: "/dashboard/subject/[subjectId]/teacher/test",
         icon: "quiz",
         name: "Evaluaciones"
+    },
+    {
+        href: "/dashboard/subject/[subjectId]/teacher/students",
+        icon: "person_edit",
+        name: "Estudiantes"
     }
 ];
 
