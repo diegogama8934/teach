@@ -34,6 +34,39 @@ export const StudentPages: page[] = [
     }
 ];
 
+export const TeacherPages: page[] = [
+    {
+        href: "/dashboard/subject/[subjectId]/teacher/annoucements",
+        icon: "home",
+        name: "Anuncios de clase"
+    },
+    {
+        href: "/dashboard/subject/[subjectId]/teacher/content",
+        icon: "folder_copy",
+        name: "Contenido"
+    },
+    {
+        href: "/dashboard/subject/[subjectId]/teacher/evidences",
+        icon: "description",
+        name: "Evidencias"
+    },
+    {
+        href: "/dashboard/subject/[subjectId]/teacher/classroom",
+        icon: "credit_score",
+        name: "Calificaciones"
+    },
+    {
+        href: "/dashboard/subject/[subjectId]/teacher/classroom",
+        icon: "videocam",
+        name: "Salón de clases"
+    },
+    {
+        href: "/dashboard/subject/[subjectId]/teacher/tests",
+        icon: "quiz",
+        name: "Evaluaciones"
+    }
+];
+
 export const FakeComments: commentOnAnnouncement[] = [
     {
         user: {

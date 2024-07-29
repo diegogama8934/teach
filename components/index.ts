@@ -7,6 +7,7 @@ export { FormRegisterAccount } from "@/components/atoms/presentation/FormRegiste
 // Atoms / Subject
 export { AddAnnouncement } from "@/components/atoms/subject/AddAnnouncement";
 export { StudentSideBar } from "@/components/atoms/subject/StudentSideBar";
+export { TeacherSideBar } from "@/components/atoms/subject/TeacherSideBar";
 export { Announcement } from "@/components/atoms/subject/Announcement";
 export { CommentsOnAnnouncement } from "@/components/atoms/subject/CommentsOnAnnouncement";
 export { SubjectTopic } from "@/components/atoms/subject/SubjectTopic";

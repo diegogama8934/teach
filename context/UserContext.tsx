@@ -61,7 +61,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 
     function getUserRolInSubject(subjectId: string): ("student" | "teacher") {
         // TODO: End function
-        return "student";
+        return "teacher";
     }
 
     return (
