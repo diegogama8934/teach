@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-4 bg-white min-h-screen">
-      <header className="mt-8 px-32 flex items-center justify-between">
+      <header className="mt-4 lg:mt-8 px-4 lg:px-32 flex items-center justify-between">
         <div className="flex gap-8 items-center">
           <Link href="" className="flex gap-2 items-center mr-12">
             <Image
@@ -17,20 +17,20 @@ export default function Home() {
             <span className="text-xl tracking-wide text-zinc-800">TEACH</span>
           </Link>
 
-          <Link href={""} className="text-primaryColor font-black">Inicio</Link>
-          <Link href={""} className="text-zinc-700">Preguntas frecuentes</Link>
-          <Link href={""} className="text-zinc-700">¿Por qué TEACH?</Link>
-          <Link href={""} className="text-zinc-700">Guía de usuario</Link>
+          <Link href={""} className="lg:block hidden text-primaryColor font-black">Inicio</Link>
+          <Link href={""} className="lg:block hidden text-zinc-700">Preguntas frecuentes</Link>
+          <Link href={""} className="lg:block hidden text-zinc-700">¿Por qué TEACH?</Link>
+          <Link href={""} className="lg:block hidden text-zinc-700">Guía de usuario</Link>
         </div>
-        <div className="flex gap-8">
+        <div className="lg:flex hidden gap-8">
           <Link href={"/login"} className="">Inicia sesión</Link>
           <Link href={"/signin"} className="">Regístrate</Link>
         </div>
       </header>
 
-      <section className="flex items-center py-24 px-48 justify-between">
+      <section className="flex lg:flex-row flex-col items-center px-4 lg:py-24 lg:px-48 justify-between">
         <div className="flex flex-col w-[600px]">
-          <h1 className="text-4xl font-semibold leading-snug text-zinc-700">Todo lo que necesitas para clases virtuales en una sola plataforma</h1>
+          <h1 className="text-2xl lg:text-4xl font-semibold leading-snug text-zinc-700">Todo lo que necesitas para clases virtuales en una sola plataforma</h1>
           <p className="mt-4 text-zinc-600">
             Nuestra plataforma te permite administrar y llevar a cabo tus clases virtuales de manera eficiente y sin complicaciones.
             Con herramientas integradas para videoconferencias, gestión de estudiantes y recursos educativos, tendrás todo lo que necesitas
@@ -59,7 +59,7 @@ export default function Home() {
       <section className="flex flex-col px-48 bg-zinc-50 py-24 gap-8">
         <h2 className="text-3xl text-zinc-600 font-semibold">Características</h2>
 
-        <div className="flex gap-24">
+        <div className="flex lg:flex-row flex-col lg:gap-24">
           <div className="flex flex-1 flex-col gap-4">
             <div className="relative w-full h-72">
               <Image
