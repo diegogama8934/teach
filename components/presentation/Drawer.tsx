@@ -16,11 +16,11 @@ export function Drawer({ isOpen, toggle }: Props) {
         onClick={toggle}
       >
       </div>
-      <aside className={`flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"} duration-500 fixed top-0 right-0 w-64 h-screen bg-zinc-50`}>
-        <Link href={""} className="lg:block hidden text-primaryColor font-black">Inicio</Link>
-        <Link href={""} className="lg:block hidden text-zinc-700">Preguntas frecuentes</Link>
-        <Link href={""} className="lg:block hidden text-zinc-700">¿Por qué TEACH?</Link>
-        <Link href={""} className="lg:block hidden text-zinc-700">Guía de usuario</Link>
+      <aside className={`flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"} p-2 gap-2 duration-500 fixed top-0 right-0 w-64 h-screen bg-zinc-50`}>
+        <Link href={""} className="lg:hidden rounded bg-primaryColor/15 block w-full p-2 text-primaryColor">Inicio</Link>
+        <Link href={""} className="lg:hidden rounded block w-full p-2 text-zinc-700">Preguntas frecuentes</Link>
+        <Link href={""} className="lg:hidden rounded block w-full p-2 text-zinc-700">¿Por qué TEACH?</Link>
+        <Link href={""} className="lg:hidden rounded block w-full p-2 text-zinc-700">Guía de usuario</Link>
       </aside>
     </>
   );
