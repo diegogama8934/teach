@@ -18,6 +18,7 @@ export function Features() {
                   height={240}
                   alt="XD"
                   className="shadow my-8 rounded-xl absolute top-0 left-0"
+                  priority
                 />
                 <Image
                   src={img2src}
@@ -25,6 +26,7 @@ export function Features() {
                   height={240}
                   alt="XD"
                   className="shadow my-8 rounded-xl absolute bottom-0 right-0"
+                  priority
                 />
               </div>
 

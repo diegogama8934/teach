@@ -22,6 +22,7 @@ export function Hero() {
           height={200}
           alt="someone studying in laptop"
           className="absolute rounded-full w-40 lg:w-[200px] aspect-square object-cover shadow-2xl"
+          priority
         />
         <Image
           src="/hero-image-2.jpeg"
@@ -29,6 +30,7 @@ export function Hero() {
           height={300}
           alt="someone studying in laptop"
           className="rounded-full w-52 lg:w-[300px] aspect-square object-cover shadow-2xl absolute right-0 bottom-0"
+          priority
         />
       </div>
     </section>
