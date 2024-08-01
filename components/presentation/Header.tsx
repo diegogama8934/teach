@@ -6,14 +6,14 @@ import { Drawer } from "./Drawer";
 
 export function Header() {
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
   function toggleDrawer() {
     setIsDrawerOpen(prevState => !prevState);
   }
 
   return (
-    <header className="lg:mt-8 p-4 lg:px-32 flex items-center justify-between lg:shadow-none shadow sticky top-0 z-10 backdrop-blur-md">
+    <header className="lg:mt-8 p-4 lg:px-32 flex items-center justify-between lg:shadow-none shadow sticky top-0 z-10 bg-white/40 backdrop-blur-md">
       <div className="flex gap-8 items-center">
         <Link href="" className="flex gap-2 items-center mr-12">
           <Image
