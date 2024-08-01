@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import { dropdownButtons } from "@/constants/dropdownButtons";
+import { dropdownButtons } from "@/constants";
 import React, { useState, useContext, ReactNode } from "react";
 import { UserContext } from "@/context/UserContext";
 

@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { StudentPages } from "@/constants";
-import { mainPages } from "@/constants/pages";
+import { mainPages } from "@/constants";
 import { usePathname, useParams } from "next/navigation";
 import { useState } from "react";
 

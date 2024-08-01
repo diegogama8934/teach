@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useParams, usePathname } from "next/navigation";
 import { TeacherPages } from "@/constants";
-import { mainPages } from "@/constants/pages";
+import { mainPages } from "@/constants";
 import Link from "next/link";
 
 export function TeacherSideBar() {
