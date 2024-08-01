@@ -25,3 +25,10 @@ export interface studentInClass {
     activitiesScore: number
     assistantScore: number
 }
+
+export interface landingFeature {
+    img1src: string
+    img2src: string
+    title: string
+    description: string
+}

@@ -1,5 +1,5 @@
 import { page } from "@/interfaces/pages";
-import { commentOnAnnouncement, annoucement, subjectTopic } from "@/interfaces";
+import { commentOnAnnouncement, annoucement, subjectTopic, landingFeature } from "@/interfaces";
 
 export const StudentPages: page[] = [
     {
@@ -74,6 +74,27 @@ export const TeacherPages: page[] = [
         href: "/dashboard/subject/[subjectId]/teacher/assists",
         icon: "check",
         name: "Asistencias"
+    }
+];
+
+export const LandingFeatures: landingFeature[] = [
+    {
+        img1src: "/workspace-example.png",
+        img2src: "/activiti-teacher-example.png",
+        title: "Gestión integral de clases",
+        description: "Organiza y administra tus clases con facilidad. Crea horarios, asigna tareas, y lleva un seguimiento detallado del progreso de tus estudiantes."
+    },
+    {
+        img1src: "/scores-example.png",
+        img2src: "/next-test-example.jpg",
+        title: "Evaluaciones y calificaciones",
+        description: "Crea y administra exámenes y cuestionarios en línea. Automatiza la calificación y proporciona retroalimentación instantánea a tus estudiantes."
+    },
+    {
+        img1src: "/subject-content-example.png",
+        img2src: "/privacy-example.png",
+        title: "Seguridad y privacidad",
+        description: "Protege la información de tus estudiantes y garantiza un entorno de aprendizaje seguro con nuestras medidas privacidad dentro de las clases."
     }
 ];
 

@@ -1,6 +1,9 @@
 // Atoms / Presentation
 export { FormLogin } from "@/components/atoms/presentation/FormLogin";
 export { FormRegisterAccount } from "@/components/atoms/presentation/FormRegisterAccount";
+export { Header as LandingHeader } from "@/components/atoms/presentation/Header";
+export { Hero } from "@/components/atoms/presentation/Hero";
+export { Features } from "@/components/atoms/presentation/Features";
 
 
 

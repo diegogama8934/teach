@@ -1,135 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import { LandingHeader, Hero, Features } from "@/components";
 
 export default function Home() {
 
   return (
     <div className="flex flex-col gap-4 bg-white min-h-screen">
-      <header className="lg:mt-8 p-4 lg:px-32 flex items-center justify-between lg:shadow-none shadow">
-        <div className="flex gap-8 items-center">
-          <Link href="" className="flex gap-2 items-center mr-12">
-            <Image
-              src="/logo.svg"
-              width={40}
-              height={40}
-              alt="Logo"
-              className="lg:w-10 w-8 aspect-square"
-            />
-            <span className="lg:text-xl text-md tracking-wide text-zinc-800">TEACH</span>
-          </Link>
 
-          <Link href={""} className="lg:block hidden text-primaryColor font-black">Inicio</Link>
-          <Link href={""} className="lg:block hidden text-zinc-700">Preguntas frecuentes</Link>
-          <Link href={""} className="lg:block hidden text-zinc-700">¿Por qué TEACH?</Link>
-          <Link href={""} className="lg:block hidden text-zinc-700">Guía de usuario</Link>
-        </div>
-        <div className="lg:flex hidden gap-8">
-          <Link href={"/login"} className="">Inicia sesión</Link>
-          <Link href={"/signin"} className="">Regístrate</Link>
-        </div>
-      </header>
+      <LandingHeader />
 
-      <section className="flex lg:flex-row flex-col lg:gap-0 gap-12 items-center px-12 lg:py-24 lg:px-48 justify-between mt-12">
-        <div className="flex flex-col lg:w-[600px] lg:px-0">
-          <h1 className="text-2xl lg:text-4xl font-semibold leading-snug text-zinc-700">Todo lo que necesitas para clases virtuales en una sola plataforma</h1>
-          <p className="mt-4 text-zinc-500 lg:text-base text-sm">
-            Nuestra plataforma te permite administrar y llevar a cabo tus clases virtuales de manera eficiente y sin complicaciones.
-            Con herramientas integradas para videoconferencias, gestión de estudiantes y recursos educativos, tendrás todo lo que necesitas
-            para ofrecer una experiencia educativa excepcional desde cualquier lugar.
-          </p>
-          <Link href="" className="bg-primaryColor text-white rounded p-4 w-32 lg:w-48 text-center mt-16">Regístrate</Link>
-        </div>
-        <div className="relative h-72 w-full lg:w-[400px] lg:h-[400px]">
-          <Image
-            src="/hero-image.png"
-            width={200}
-            height={200}
-            alt="someone studying in laptop"
-            className="absolute rounded-full w-40 lg:w-[200px] aspect-square object-cover shadow-2xl"
-          />
-          <Image
-            src="/hero-image-2.jpeg"
-            width={300}
-            height={300}
-            alt="someone studying in laptop"
-            className="rounded-full w-52 lg:w-[300px] aspect-square object-cover shadow-2xl absolute right-0 bottom-0"
-          />
-        </div>
-      </section>
+      <Hero />
 
-      <section className="flex flex-col px-12 lg:px-48 bg-zinc-50 py-12 lg:py-24 gap-8">
-        <h2 className="lg:text-3xl text-xl text-zinc-600 font-semibold">Características</h2>
-
-        <div className="flex lg:flex-row flex-col lg:gap-24">
-          <div className="flex flex-1 flex-col gap-4">
-            <div className="relative w-full h-72">
-              <Image
-                src="/workspace-example.png"
-                width={240}
-                height={240}
-                alt="XD"
-                className="shadow my-8 rounded-xl absolute top-0 left-0"
-              />
-              <Image
-                src="/activiti-teacher-example.png"
-                width={240}
-                height={240}
-                alt="XD"
-                className="shadow my-8 rounded-xl absolute bottom-0 right-0"
-              />
-            </div>
-
-            <h3 className="lg:text-xl text-md font-semibold text-zinc-600">Gestión integral de clases</h3>
-            <p className="text-zinc-600 lg:text-base text-sm">
-              Organiza y administra tus clases con facilidad. Crea horarios, asigna tareas, y lleva un seguimiento detallado del progreso de tus estudiantes.
-            </p>
-          </div>
-          <div className="flex flex-1 flex-col gap-4">
-            <div className="relative w-full h-72">
-              <Image
-                src="/scores-example.png"
-                width={240}
-                height={240}
-                alt="XD"
-                className="shadow my-8 rounded-xl absolute top-0 left-0"
-              />
-              <Image
-                src="/next-test-example.jpg"
-                width={240}
-                height={240}
-                alt="XD"
-                className="shadow my-8 rounded-xl absolute bottom-0 right-0"
-              />
-            </div>
-            <h3 className="lg:text-3xl text-xl text-zinc-600 font-semibold">Evaluaciones y calificaciones</h3>
-            <p className="text-zinc-600 lg:text-base text-sm">
-              Crea y administra exámenes y cuestionarios en línea. Automatiza la calificación y proporciona retroalimentación instantánea a tus estudiantes.
-            </p>
-          </div>
-          <div className="flex flex-1 flex-col gap-4">
-            <div className="relative w-full h-72">
-              <Image
-                src="/subject-content-example.png"
-                width={240}
-                height={240}
-                alt="XD"
-                className="shadow my-8 rounded-xl absolute top-0 left-0"
-              />
-              <Image
-                src="/privacy-example.png"
-                width={240}
-                height={240}
-                alt="XD"
-                className="shadow my-8 rounded-xl absolute bottom-0 right-0"
-              />
-            </div>
-            <h3 className="lg:text-3xl text-xl text-zinc-600 font-semibold">Seguridad y privacidad</h3>
-            <p className="text-zinc-600 lg:text-base text-sm">
-              Protege la información de tus estudiantes y garantiza un entorno de aprendizaje seguro con nuestras medidas privacidad dentro de las clases.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Features />
     </div>
   );
 }
