@@ -3,11 +3,13 @@ import Link from "next/link";
 
 interface Props {
   isOpen: boolean
+  screenWidth: number
   toggle: () => void
 }
 
-export function Drawer({ isOpen, toggle }: Props) {
+export function Drawer({ isOpen, screenWidth, toggle }: Props) {
 
+  if (screenWidth > 640) return;
 
   return (
     <>
