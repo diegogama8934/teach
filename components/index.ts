@@ -4,6 +4,7 @@ export { FormRegisterAccount } from "@/components/presentation/FormRegisterAccou
 export { Header as LandingHeader } from "@/components/presentation/Header";
 export { Hero } from "@/components/presentation/Hero";
 export { Features } from "@/components/presentation/Features";
+export { Drawer } from "@/components/presentation/Drawer";
 
 
 // Subject (inside a subject)
