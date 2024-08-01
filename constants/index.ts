@@ -1,5 +1,4 @@
-import { page } from "@/interfaces/pages";
-import { commentOnAnnouncement, annoucement, subjectTopic, landingFeature } from "@/interfaces";
+import { commentOnAnnouncement, annoucement, subjectTopic, landingFeature, dropdownButton, page } from "@/interfaces";
 
 export const StudentPages: page[] = [
     {
@@ -96,6 +95,41 @@ export const LandingFeatures: landingFeature[] = [
         title: "Seguridad y privacidad",
         description: "Protege la información de tus estudiantes y garantiza un entorno de aprendizaje seguro con nuestras medidas privacidad dentro de las clases."
     }
+];
+
+export const mainPages: page[] = [
+    {
+        href: "/dashboard/subjects",
+        icon: "home",
+        name: "Inicio"
+    },
+    {
+        href: "/dashboard/act",
+        icon: "menu_book",
+        name: "Actividades"
+    },
+    {
+        href: "/dashboard/classroom",
+        icon: "background_replace",
+        name: "Salón de clases"
+    },
+    {
+        href: "/dashboard/evaluations",
+        icon: "description",
+        name: "Evaluaciones"
+    },
+    {
+        href: "/dashboard/calendar",
+        icon: "calendar_month",
+        name: "Calendario"
+    }
+];
+
+export const dropdownButtons: dropdownButton[] = [
+    { name: "Configuración", icon: "settings" },
+    { name: "Notificaciones", icon: "notifications" },
+    { name: "Modo oscuro", icon: "dark_mode" },
+    { name: "Ayuda", icon: "help" },
 ];
 
 export const FakeComments: commentOnAnnouncement[] = [
