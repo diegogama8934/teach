@@ -6,7 +6,7 @@ import { Drawer } from "./Drawer";
 
 export function Header() {
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   function toggleDrawer() {
     setIsDrawerOpen(prevState => !prevState);
