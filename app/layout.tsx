@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Assistant } from "next/font/google";
-import "./globals.css";
+import { Assistant } from "next/font/google";
 import { UserProvider } from "@/context/UserContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./globals.css";
 
 const assistant = Assistant({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       </head>
       <UserProvider>
         <body className={assistant.className + " h-screen"}>{children}</body>
+        <SpeedInsights />
       </UserProvider>
     </html>
   );
