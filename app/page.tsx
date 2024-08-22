@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client"
 import { LandingHeader, Hero, Features } from "@/components";
 
 export default function Home() {

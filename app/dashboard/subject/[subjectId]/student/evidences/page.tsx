@@ -1,3 +1,4 @@
+"use client"
 import { Header } from "@/components";
 import { Metadata } from "next";
 
@@ -20,14 +21,15 @@ async function getSubjectNameById(subjectId: string): Promise<string> {
   return "Nombre de la materia";
 }
 
-export default async function StudentEvidencesPage({ params }: Props) {
+// TODO make this async
+export default function StudentEvidencesPage({ params }: Props) {
 
-  const subjectName = await getSubjectNameById(params.subjectId);
+  // const subjectName = await getSubjectNameById(params.subjectId);
 
   return (
     <>
 
-      <Header title={`${subjectName} - Evidencias`} primaryAction={<></>} />
+      <Header title={`${"subjectName"} - Evidencias`} primaryAction={<></>} />
 
       <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8">
 

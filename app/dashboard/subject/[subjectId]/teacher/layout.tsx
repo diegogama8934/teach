@@ -1,3 +1,4 @@
+"use client"
 import { TeacherSideBar } from "@/components";
 import { ReactNode } from "react";
 

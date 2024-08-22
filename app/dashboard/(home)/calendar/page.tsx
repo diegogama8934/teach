@@ -1,3 +1,4 @@
+"use client"
 import { Header } from "@/components"
 import { Metadata } from "next";
 
@@ -6,7 +7,8 @@ export const metadata: Metadata = {
   description: "Calendario del usuario"
 }
 
-export default async function CalendarPage() {
+//TODO make this async
+export default function CalendarPage() {
 
 
   return (

@@ -1,3 +1,4 @@
+"use client"
 import { Header, AddAnnouncement, Announcement } from "@/components";
 import { annoucement } from "@/interfaces";
 import { FakeAnnoucements } from "@/constants";
@@ -27,22 +28,23 @@ async function getAnnoucementsBySubjectId(subjectId: string): Promise<annoucemen
   return FakeAnnoucements
 }
 
-export default async function StudentAnnouncementsPage({ params }: Props) {
+// TODO make this async
+export default function StudentAnnouncementsPage({ params }: Props) {
 
-  const subjectName = await getSubjectNameById(params.subjectId);
-  const subjectAnnouncements = await getAnnoucementsBySubjectId(params.subjectId);
+  // const subjectName = await getSubjectNameById(params.subjectId);
+  // const subjectAnnouncements = await getAnnoucementsBySubjectId(params.subjectId);
 
   return (
     <>
 
-      <Header title={`${subjectName} - Anuncios de clase`} primaryAction={<></>} />
+      <Header title={`${"subjectName"} - Anuncios de clase`} primaryAction={<></>} />
 
       <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8 gap-8">
         <AddAnnouncement />
 
         <div className="flex flex-col gap-8">
           {
-            subjectAnnouncements.map((announcement, index) => <Announcement key={index} announcement={announcement} />)
+            FakeAnnoucements.map((announcement, index) => <Announcement key={index} announcement={announcement} />)
           }
         </div>
       </main>

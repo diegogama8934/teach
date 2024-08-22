@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { FormRegisterAccount } from "@/components";
@@ -22,7 +23,7 @@ export default function SignInPage() {
             height={60}
             alt="Logo"
           />
-          <h2 className="text-4xl text-zinc-700 font-bold tracking-wide">TEACH</h2>
+          <span className="text-4xl text-zinc-700 font-bold tracking-wide">TEACH</span>
         </Link>
         <h1 className="text-3xl font-medium">Registrando tu cuenta</h1>
       </div>

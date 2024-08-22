@@ -1,3 +1,4 @@
+"use client"
 import { Header } from "@/components"
 import { Metadata } from "next";
 
@@ -12,9 +13,10 @@ async function getEvidences() {
   return ([]);
 }
 
-export default async function Page() {
+//TODO make this async
+export default function Page() {
 
-  const evidences = await getEvidences();
+  // const evidences = await getEvidences();
 
   return (
     <>
@@ -22,7 +24,7 @@ export default async function Page() {
 
       <main className="flex flex-1 w-full bg-white rounded-3xl p-8">
         {
-          evidences?.length ?
+          [].length ?
             (
               <div>
 

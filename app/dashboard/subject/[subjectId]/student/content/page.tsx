@@ -1,3 +1,4 @@
+"use client"
 import { Header, SubjectTopic } from "@/components";
 import { Metadata } from "next";
 import { FakeSubjectsTopics } from "@/constants";
@@ -25,16 +26,17 @@ async function getSubjectContentById(subjectId: string) {
   // TODO: this need to return all the information that this page will need
 }
 
-export default async function StudentContentPage({ params }: Props) {
+//TODO make this async
+export default function StudentContentPage({ params }: Props) {
 
-  const subjectName = await getSubjectNameById(params.subjectId);
+  // const subjectName = await getSubjectNameById(params.subjectId);
   // Considering deleting const subject name because subjectContent can return the subject name
-  const subjectContent = await getSubjectContentById(params.subjectId);
+  // const subjectContent = await getSubjectContentById(params.subjectId);
 
   return (
     <>
 
-      <Header title={`${subjectName} - Contenido`} primaryAction={<></>} />
+      <Header title={`${"subjectName"} - Contenido`} primaryAction={<></>} />
 
       <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8 gap-12">
 

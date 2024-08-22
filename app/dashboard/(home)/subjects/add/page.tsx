@@ -1,3 +1,4 @@
+"use client"
 import { Header, ContentCreateSubject } from "@/components";
 import Link from "next/link";
 
