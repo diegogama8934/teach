@@ -7,14 +7,14 @@ interface Props {
   params: { subjectId: string }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  //TODO: getSubjectNameById using params.id and set it like:
+// export async function generateMetadata({ params }: Props): Promise<Metadata> {
+//   //TODO: getSubjectNameById using params.id and set it like:
 
-  return {
-    title: `${"Subject"} - Contenido`,
-    description: `Panel de anuncios de clase de la materia ${"Subject"}`
-  }
-}
+//   return {
+//     title: `${"Subject"} - Contenido`,
+//     description: `Panel de anuncios de clase de la materia ${"Subject"}`
+//   }
+// }
 
 async function getSubjectNameById(subjectId: string): Promise<string> {
 

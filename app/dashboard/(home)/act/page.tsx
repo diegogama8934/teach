@@ -2,10 +2,10 @@
 import { Header } from "@/components"
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Actividades y tareas",
-  description: "Panel de clases de usuario"
-}
+// export const metadata: Metadata = {
+//   title: "Actividades y tareas",
+//   description: "Panel de clases de usuario"
+// }
 
 async function getEvidences() {
 

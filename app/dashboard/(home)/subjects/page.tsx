@@ -4,10 +4,10 @@ import { Header, Card, CardWithTags, ModalGetIntoAClass } from "@/components"
 import Link from "next/link";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Mis clases",
-  description: "Panel de clases de usuario"
-}
+// export const metadata: Metadata = {
+//   title: "Mis clases",
+//   description: "Panel de clases de usuario"
+// }
 
 async function getSubjectsByUserId() {
   return ({ fakeSubjectsAsStudent, fakeSubjectsAsTeacher });

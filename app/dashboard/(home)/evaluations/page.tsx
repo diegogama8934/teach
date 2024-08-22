@@ -2,10 +2,10 @@
 import { Header } from "@/components";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Evaluaciones",
-  description: "Evaluaciones del usuario"
-}
+// export const metadata: Metadata = {
+//   title: "Evaluaciones",
+//   description: "Evaluaciones del usuario"
+// }
 
 export default function EvaluationsPage() {
 

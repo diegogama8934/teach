@@ -2,10 +2,10 @@
 import { Header } from "@/components";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Salón de clases",
-  description: "Salón de clases del usuario"
-}
+// export const metadata: Metadata = {
+//   title: "Salón de clases",
+//   description: "Salón de clases del usuario"
+// }
 
 export default function ClassroomPage() {
 
