@@ -1,3 +1,4 @@
+"use client"
 import { subjectTopic } from "@/interfaces"
 
 export function SubjectTopic({ topic, topicContent }: subjectTopic) {

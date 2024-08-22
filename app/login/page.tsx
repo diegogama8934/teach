@@ -1,12 +1,13 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { FormLogin } from "@/components";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Login",
-  description: "Iniciar sesión en TEACH. Plataforma para clases virtuales"
-}
+// export const metadata: Metadata = {
+//   title: "Login",
+//   description: "Iniciar sesión en TEACH. Plataforma para clases virtuales"
+// }
 
 export default function LoginPage() {
 

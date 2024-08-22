@@ -1,3 +1,4 @@
+"use client"
 import { subjectCard } from "@/utils/Interfaces";
 import Link from "next/link";
 
