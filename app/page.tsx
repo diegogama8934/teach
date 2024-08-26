@@ -10,7 +10,8 @@ export default function Home() {
 
       <Hero />
 
-      <Features />
+      {/* <Features /> */}
+      {/* Features component have a problem with images, TODO: Check this in the future */}
     </div>
   );
 }

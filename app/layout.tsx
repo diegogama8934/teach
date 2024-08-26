@@ -6,11 +6,11 @@ import "./globals.css";
 
 const assistant = Assistant({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "TEACH",
-  description: "Plataforma de gestion e impartición de clases virtuales",
-  icons: "/favicon.png"
-};
+// export const metadata: Metadata = {
+//   title: "TEACH",
+//   description: "Plataforma de gestion e impartición de clases virtuales",
+//   icons: "/favicon.png"
+// };
 
 export default function RootLayout({
   children,
