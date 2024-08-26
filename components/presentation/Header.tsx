@@ -1,32 +1,17 @@
 "use client";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Drawer } from "./Drawer";
+import { useState } from "react";
+
+const Drawer = dynamic(() => import("@/components/presentation/Drawer").then((mod) => mod.Drawer), {ssr:false})
 
 export function Header() {
-
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [screenWidth, setScreenWidth] = useState<number>();
 
   function toggleDrawer() {
     setIsDrawerOpen(prevState => !prevState);
   }
-
-  function handleViewportChange(e: Event) {
-    const target = e.target as Window;
-    const currentWidth = target.screen.width;
-    setScreenWidth(currentWidth);
-    if (currentWidth < 640) return;
-    setIsDrawerOpen(false);
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", (e: Event) => handleViewportChange(e));
-    return () => {
-      window.removeEventListener("resize", (e: Event) => handleViewportChange(e));
-    };
-  }, []);
 
   return (
     <header className="lg:mt-8 p-4 lg:px-32 flex items-center justify-between lg:shadow-none shadow sticky top-0 z-10 bg-white/40 backdrop-blur-md">
@@ -60,8 +45,7 @@ export function Header() {
         <Link href={"/signin"} className="">Regístrate</Link>
       </div>
 
-      {screenWidth && <Drawer isOpen={isDrawerOpen} screenWidth={screenWidth} toggle={toggleDrawer} />}
-
+      <Drawer isOpen={isDrawerOpen} toggle={toggleDrawer} />
     </header>
   );
 }

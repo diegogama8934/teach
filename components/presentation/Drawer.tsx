@@ -1,13 +1,31 @@
 "use client";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 interface Props {
   isOpen: boolean
-  screenWidth: number
   toggle: () => void
 }
 
-export function Drawer({ isOpen, screenWidth, toggle }: Props) {
+export function Drawer({ isOpen, toggle }: Props) {
+
+  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+  
+  function handleViewportChange() {
+    const currentWidth = window.innerWidth;
+    setScreenWidth(currentWidth);
+    if (currentWidth >= 640) {
+      toggle();
+    }
+  }
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleViewportChange);
+    return () => {
+      window.removeEventListener("resize", handleViewportChange);
+    };
+  }, []);
 
   if (screenWidth > 640) return;
 
