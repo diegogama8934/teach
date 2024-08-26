@@ -2,9 +2,9 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 
-const Drawer = dynamic(() => import("@/components/presentation/Drawer").then((mod) => mod.Drawer), {ssr:false})
+const Drawer = dynamic(() => import("@/components/presentation/Drawer").then((mod) => mod.Drawer), {ssr:false, })
 
 export function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -45,7 +45,9 @@ export function Header() {
         <Link href={"/signin"} className="">Regístrate</Link>
       </div>
 
-      <Drawer isOpen={isDrawerOpen} toggle={toggleDrawer} />
+      <Suspense fallback={<p>Xd</p>}>
+        <Drawer isOpen={isDrawerOpen} toggle={toggleDrawer} />
+      </Suspense>
     </header>
   );
 }

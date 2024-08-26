@@ -1,12 +1,15 @@
 "use client"
-import { LandingHeader, Hero, Features } from "@/components";
+import { Hero, Features } from "@/components";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(()=> import("@/components/presentation/Header").then((mod) => mod.Header), {ssr:false});
 
 export default function Home() {
 
   return (
     <div className="flex flex-col gap-4 bg-white min-h-screen overflow-y-hidden">
 
-      <LandingHeader />
+      <Header />
 
       <Hero />
 
