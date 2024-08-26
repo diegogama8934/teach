@@ -7,7 +7,7 @@ import { Drawer } from "./Drawer";
 export function Header() {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [screenWidth, setScreenWidth] = useState<number>();
+  const [screenWidth, setScreenWidth] = useState<number>(window.screen.width);
 
   function toggleDrawer() {
     setIsDrawerOpen(prevState => !prevState);
@@ -23,7 +23,6 @@ export function Header() {
 
   useEffect(() => {
     window.addEventListener("resize", (e: Event) => handleViewportChange(e));
-    setScreenWidth(window.screen.width);
     return () => {
       window.removeEventListener("resize", (e: Event) => handleViewportChange(e));
     };
@@ -61,7 +60,7 @@ export function Header() {
         <Link href={"/signin"} className="">Regístrate</Link>
       </div>
 
-      {screenWidth && <Drawer isOpen={isDrawerOpen} screenWidth={screenWidth} toggle={toggleDrawer} />}
+      <Drawer isOpen={isDrawerOpen} screenWidth={screenWidth} toggle={toggleDrawer} />
 
     </header>
   );
