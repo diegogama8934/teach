@@ -1,25 +1,23 @@
-"use client"
 import { fakeSubjectsAsStudent, fakeSubjectsAsTeacher } from "@/utils/FakeData";
 import { Header, Card, CardWithTags, ModalGetIntoAClass } from "@/components"
 import Link from "next/link";
 import { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "Mis clases",
-//   description: "Panel de clases de usuario"
-// }
+export const metadata: Metadata = {
+  title: "Mis clases",
+  description: "Panel de clases de usuario"
+}
 
 async function getSubjectsByUserId() {
   return ({ fakeSubjectsAsStudent, fakeSubjectsAsTeacher });
 }
 
-//TODO make this async
-export default function Page() {
+export default async function Page() {
 
-  // const {
-  //   fakeSubjectsAsStudent: subjectsAsStudent,
-  //   fakeSubjectsAsTeacher: subjectsAsTeacher
-  // } = await getSubjectsByUserId();
+  const {
+    fakeSubjectsAsStudent: subjectsAsStudent,
+    fakeSubjectsAsTeacher: subjectsAsTeacher
+  } = await getSubjectsByUserId();
 
   return (
     <>
@@ -28,12 +26,12 @@ export default function Page() {
 
       <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8">
         {
-          fakeSubjectsAsStudent &&
+          subjectsAsStudent &&
           (
             <div className="w-full flex flex-wrap gap-4 mb-16">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que tomas</h2>
               {
-                fakeSubjectsAsStudent.map((subject, index) => (
+                subjectsAsStudent.map((subject, index) => (
                   subject.tags.length == 0 ? (
                     <Card key={index} {...subject} isCreating={false} />
                   ) : (
@@ -45,13 +43,13 @@ export default function Page() {
           )
         }
         {
-          fakeSubjectsAsTeacher &&
+          subjectsAsTeacher &&
           (
 
             <div className="w-full flex flex-wrap gap-4">
               <h2 className="w-full text-3xl text-zinc-400 font-light">Cursos que impartes</h2>
               {
-                fakeSubjectsAsTeacher.map((subject, index) => (
+                subjectsAsTeacher.map((subject, index) => (
                   subject.tags.length == 0 ? (
                     <Card key={index} {...subject} isCreating={false} />
                   ) : (
@@ -64,7 +62,7 @@ export default function Page() {
           )
         }
         {
-          (!fakeSubjectsAsStudent && !fakeSubjectsAsTeacher) && (
+          (!subjectsAsStudent && !subjectsAsTeacher) && (
             <div className="flex justify-center items-center flex-col h-full">
               <span className="material-symbols-rounded !text-[#C0C0C0] inline-block !text-[140px]">tv_off</span>
               <p className="text-[#C0C0C0] text-3xl max-w-96 text-center">

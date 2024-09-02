@@ -1,11 +1,10 @@
-"use client"
-import { Header } from "@/components"
 import { Metadata } from "next";
+import { Header } from "@/components"
 
-// export const metadata: Metadata = {
-//   title: "Actividades y tareas",
-//   description: "Panel de clases de usuario"
-// }
+export const metadata: Metadata = {
+  title: "Actividades y tareas",
+  description: "Panel de clases de usuario"
+}
 
 async function getEvidences() {
 
@@ -13,10 +12,9 @@ async function getEvidences() {
   return ([]);
 }
 
-//TODO make this async
-export default function Page() {
+export default async function Page() {
 
-  // const evidences = await getEvidences();
+  const evidences = await getEvidences();
 
   return (
     <>
