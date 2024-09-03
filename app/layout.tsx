@@ -22,10 +22,15 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
       </head>
-      <UserProvider>
-        <body className={assistant.className + " h-screen"}>{children}</body>
-        <SpeedInsights />
-      </UserProvider>
+      <body className={assistant.className + " h-screen"}>
+        <UserProvider>
+
+          {children}
+          <SpeedInsights />
+
+        </UserProvider>
+
+      </body>
     </html>
   );
 }

@@ -1,8 +1,9 @@
 "use client"
 import { Hero, Features } from "@/components";
+import { Header } from "@/components/presentation/Header";
 import dynamic from "next/dynamic";
 
-const Header = dynamic(()=> import("@/components/presentation/Header").then((mod) => mod.Header), {ssr:false});
+// const Header = dynamic(()=> import("@/components/presentation/Header").then((mod) => mod.Header), {ssr:false});
 
 export default function Home() {
 
