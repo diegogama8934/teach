@@ -31,7 +31,7 @@ export default async function StudentEvidencesPage({ params }: Props) {
       <Header title={`${subjectName} - Evidencias`} primaryAction={<></>} />
 
       <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8">
-
+        <span>Tarea 1</span>
       </main>
     </>
   );

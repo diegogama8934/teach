@@ -1,4 +1,4 @@
-import { commentOnAnnouncement, annoucement, subjectTopic, landingFeature, dropdownButton, page } from "@/interfaces";
+import { commentOnAnnouncement, annoucement, subjectTopic, landingFeature, dropdownButton, page, user } from "@/interfaces";
 
 export const StudentPages: page[] = [
     {
@@ -130,6 +130,44 @@ export const dropdownButtons: dropdownButton[] = [
     { name: "Notificaciones", icon: "notifications" },
     { name: "Modo oscuro", icon: "dark_mode" },
     { name: "Ayuda", icon: "help" },
+];
+
+export const FakeStudents:user[] = [
+    {
+        email:"Weldon_Gerhold5@yahoo.com",
+        fullname:"Darla Wuckert MD",
+        profileImage:"https://images.pexels.com/photos/2083751/pexels-photo-2083751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+        email:"Catherine.Schaden14@gmail.com",
+        fullname:"Velma Glover",
+        profileImage:"https://images.pexels.com/photos/1844547/pexels-photo-1844547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+        email:"Daisy24@hotmail.com",
+        fullname:"Nellie Mills",
+        profileImage:"https://images.pexels.com/photos/3799786/pexels-photo-3799786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+        email:"Clay29@gmail.com",
+        fullname:"Constance Runolfsson",
+        profileImage:"https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+        email:"Delia_Goyette8@gmail.com",
+        fullname:"Alan Kunde",
+        profileImage:"https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+        email:"Jessyca24@hotmail.com",
+        fullname:"Charlotte Hudson",
+        profileImage:"https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+        email:"Shad_Kuhn@hotmail.com",
+        fullname:"Tasha Mraz",
+        profileImage:"https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
 ];
 
 export const FakeComments: commentOnAnnouncement[] = [
