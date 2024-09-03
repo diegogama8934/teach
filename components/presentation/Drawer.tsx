@@ -9,7 +9,7 @@ interface Props {
 
 export function Drawer({ isOpen, toggle }: Props) {
 
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState<number>(0);
   
   function handleViewportChange() {
     const currentWidth = window.innerWidth;
