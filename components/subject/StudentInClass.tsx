@@ -30,8 +30,12 @@ export const StudentInClass = ({email, fullname, profileImage}:user) => {
         </div>
       </div>
 
-      <div className={`${isOpen ? "flex" : "hidden"}`}>
-        Dividir información por periodos ?
+      <div className={`${isOpen ? "flex flex-col gap-4" : "hidden"}`}>
+        <p>¿Qué información se espera?</p>
+        <p>Resumen del alumno?</p>
+        <p>Porcentaje de asistencias?</p>
+        <p>Como el profesor va a crear la clase?</p>
+        <p>El profesor deberá decidir la estructura de la clase</p>
       </div>
     </>
   )
