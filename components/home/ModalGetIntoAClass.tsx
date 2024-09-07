@@ -7,9 +7,12 @@ export function ModalGetIntoAClass() {
   const [error, setError] = useState(false);
   const [classCode, setClassCode] = useState("");
 
-  function handleModalState() {
-    setClassCode("")
-    setIsModalOpen(!isModalOpen);
+  function openModal(){
+    setIsModalOpen(true);
+  }
+  
+  function closeModal(){
+    setIsModalOpen(false);
   }
 
   function updateClassCode(newValue: string) {
@@ -26,14 +29,15 @@ export function ModalGetIntoAClass() {
     <>
       <button
         className="bg-transparent border-primaryColor px-4 py-2 border-[1px] text-primaryColor rounded-md flex items-center gap-2"
-        onClick={handleModalState}>
+        onClick={openModal}>
         <span className="inline-block text-sm">Ingresa a una clase</span>
         <span className="material-symbols-rounded !text-primaryColor inline-block !text-[18px]">arrow_circle_up</span>
       </button>
 
       <Modal
         isOpen={isModalOpen}
-        
+        closeModal={closeModal}
+        onModalClose={() => setClassCode("")}
         title="Ingresando a un curso"
         content={
           <ModalContent
@@ -45,7 +49,7 @@ export function ModalGetIntoAClass() {
         }
         footer={
           <ModalFooter 
-            handleModalState={handleModalState}
+            closeModal={closeModal}
           />
         }
       />
@@ -82,12 +86,12 @@ function ModalContent({
   );
 }
 
-function ModalFooter({handleModalState}: {handleModalState: () => void}) {
+function ModalFooter({closeModal}: {closeModal: () => void}) {
   return (
     <div className="flex gap-4">
       <button
         className="bg-red-500 text-white p-2 rounded-lg transition-all flex-1 hover:cursor-pointer hover:scale-105"
-        onClick={handleModalState}
+        onClick={closeModal}
       >Cancelar</button>
       <button
         className="bg-primaryColor text-white p-2 rounded-lg transition-all flex-1 hover:cursor-pointer hover:scale-105"

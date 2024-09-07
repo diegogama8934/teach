@@ -6,15 +6,21 @@ interface Props {
   title: string
   content: React.ReactNode
   footer: React.ReactNode
+  closeModal:() => void
   onModalOpen?: () => void
   onModalClose?:() => void
 }
 
-export function Modal({isOpen, title, content, footer, onModalClose, onModalOpen}:Props){
+export function Modal({isOpen, title, content, footer, closeModal, onModalClose, onModalOpen}:Props){
+
+  function handleCloseModal(){
+    if (onModalClose)onModalClose();
+    closeModal();
+  }
 
   return(
     <div className={`flex z-20 justify-center items-center left-0 top-0 fixed w-screen h-screen ${isOpen ? "block" : "hidden"}`}>
-      <div className="bg-black absolute w-screen h-screen opacity-40" onClick={() => {}}></div>
+      <div className="bg-black absolute w-screen h-screen opacity-40" onClick={handleCloseModal}></div>
       <div className="flex flex-col gap-8 z-30 bg-zinc-100 p-8 rounded-xl shadow-xl">
         <span className="text-2xl text-zinc-500">{title}</span>
         <div>{content}</div>
