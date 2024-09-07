@@ -80,7 +80,7 @@ export function TeacherSideBar() {
                 >
                   <span className={`
                   material-symbols-rounded !text-xl
-                  ${pathName.includes(formmatedHref) ? "!text-zinc-50 hover:!text-primaryColor" : "!text-primaryColor"}
+                  ${pathName.includes(formmatedHref) ? "!text-zinc-50" : "!text-primaryColor"}
                 `}>
                     {icon}
                   </span>

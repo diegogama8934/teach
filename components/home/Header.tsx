@@ -4,13 +4,16 @@ import { dropdownButtons } from "@/constants";
 import React, { useState, useContext, ReactNode } from "react";
 import { UserContext } from "@/context/UserContext";
 
-export function Header({
-  title, primaryAction, secondaryAction
-}: {
-  title: string, primaryAction: ReactNode, secondaryAction?: ReactNode
-}) {
+interface Props {
+  title: string, 
+  primaryAction: ReactNode, 
+  secondaryAction?: ReactNode
+}
+
+export function Header({title, primaryAction, secondaryAction}: Props) {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
   return (
     <header className="flex justify-between items-center">
 
@@ -51,7 +54,7 @@ function Dropdown() {
       flex flex-col w-60 absolute bg-zinc-100 top-14 right-0 shadow-2xl rounded-2xl p-4 gap-2
       `}
     >
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-4 items-center">
         <Image
           src="/yo3.jpeg"
           width={36}

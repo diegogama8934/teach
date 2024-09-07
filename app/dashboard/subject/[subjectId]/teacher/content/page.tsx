@@ -1,6 +1,7 @@
-import { Header, SubjectTopic } from "@/components";
+import { Header, SubjectTopic, TeacherData } from "@/components";
 import { Metadata } from "next";
 import { FakeSubjectsTopics } from "@/constants";
+import Link from "next/link";
 
 interface Props {
   params: { subjectId: string }
@@ -23,6 +24,12 @@ async function getSubjectNameById(subjectId: string): Promise<string> {
 
 async function getSubjectContentById(subjectId: string) {
   // TODO: this need to return all the information that this page will need
+
+  // Content need to have:
+  //    - Teacher data
+  //    - Weightings
+  //    - Material (files like pdfs to use in subject)
+  //    - List of topics of the subject
 }
 
 export default async function StudentContentPage({ params }: Props) {
@@ -38,16 +45,7 @@ export default async function StudentContentPage({ params }: Props) {
 
       <main className="flex flex-col flex-1 w-full bg-white rounded-3xl p-8 gap-12">
 
-        <section className="flex flex-col gap-4">
-          <h2 className="text-2xl text-zinc-400">Datos del docente</h2>
-
-          <ul className="flex flex-col gap-2">
-            <li className="text-zinc-600"><span className="font-bold">Nombre:</span> Marta Palazon</li>
-            <li className="text-zinc-600"><span className="font-bold">Correo:</span> martapalazon@gmail.com</li>
-            <li className="text-zinc-600"><span className="font-bold">Teléfono:</span> 000 000 0000</li>
-            <li className="text-zinc-600"><span className="font-bold">Consideraciones:</span> Solo atenderé mensajes en el número telefónico antes de las 8 de la noche, el correo lo checo todos los días y ahí pueden mandar cualquier duda o situación a cualquier hora. :)</li>
-          </ul>
-        </section>
+        <TeacherData />
 
         <section className="flex flex-col gap-4">
           <h2 className="text-2xl text-zinc-400">Ponderaciones</h2>

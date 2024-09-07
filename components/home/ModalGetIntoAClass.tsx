@@ -3,7 +3,7 @@ import { FormEvent, useState } from "react";
 
 export function ModalGetIntoAClass() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
   const [classCode, setClassCode] = useState("");
 
   function handleModalState() {

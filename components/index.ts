@@ -16,6 +16,7 @@ export { CommentsOnAnnouncement } from "@/components/subject/CommentsOnAnnouncem
 export { SubjectTopic } from "@/components/subject/SubjectTopic";
 export { AddCommentOnAnnouncement } from "@/components/subject/AddCommentOnAnnouncement";
 export { StudentInClass } from "@/components/subject/StudentInClass";
+export { TeacherData } from "@/components/subject/TeacherData";
 
 
 // Home (inside the app but outside of a subject)
