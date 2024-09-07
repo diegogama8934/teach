@@ -1,6 +1,6 @@
 "use client";
 import { FormEvent, useState } from "react";
-import { Modal } from "@/components";
+import { Modal, Button } from "@/components";
 
 export function ModalGetIntoAClass() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -89,14 +89,8 @@ function ModalContent({
 function ModalFooter({closeModal}: {closeModal: () => void}) {
   return (
     <div className="flex gap-4">
-      <button
-        className="bg-red-500 text-white p-2 rounded-lg transition-all flex-1 hover:cursor-pointer hover:scale-105"
-        onClick={closeModal}
-      >Cancelar</button>
-      <button
-        className="bg-primaryColor text-white p-2 rounded-lg transition-all flex-1 hover:cursor-pointer hover:scale-105"
-        type="submit"
-      >Confirmar</button>
+      <Button color="danger" content="Cancelar" type="secondary" onPress={closeModal}/>
+      <Button color="primary" content="Confirmar" type="primary"/>
     </div>
   );
 }
