@@ -1,9 +1,6 @@
 "use client";
 import { drawBackgroundAndBorderForPrimary, drawBackgroundAndBorderForSecondary, getIconColorForPrimary } from "@/utils";
 
-// bg-primaryColor bg-amber-600 bg-red-600 bg-transparent
-// border-primaryColor border-amber-600 border-red-600 border-primaryColor
-
 interface Props {
   content:string
   startIcon?:string

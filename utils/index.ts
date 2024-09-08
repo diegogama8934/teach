@@ -4,11 +4,11 @@ export function drawBackgroundAndBorderForPrimary(color:string):string{
     case "primary":
       return "btn-primary-primaryColor";
     case "warning":
-      return "bg-amber-600 border-amber-600 text-white";
+      return "btn-primary-warning";
     case "danger":
-      return "bg-red-600 border-red-600 text-white";
+      return "btn-primary-danger";
     default:
-      return "bg-primaryColor border-primaryColor text-white";
+      return "btn-primary-primaryColor";
   }
 }
 
@@ -28,12 +28,12 @@ export function getIconColorForPrimary(color:string):string{
 export function drawBackgroundAndBorderForSecondary(color:string):string{
   switch (color) {
     case "primary":
-      return "bg-transparent !border-primaryColor text-primaryColor";
+      return "btn-secondary-primaryColor";
     case "warning":
-      return "bg-transparent !border-amber-600 text-amber-600";
+      return "btn-secondary-warning";
     case "danger":
-      return "bg-transparent !border-red-600 text-red-600";
+      return "btn-secondary-danger";
     default:
-      return "bg-transparent !border-primaryColor text-white";
+      return "btn-secondary-primaryColor";
   }
 }
