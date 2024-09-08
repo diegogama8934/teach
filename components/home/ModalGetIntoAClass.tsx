@@ -88,7 +88,7 @@ function ModalContent({
 
 function ModalFooter({closeModal}: {closeModal: () => void}) {
   return (
-    <div className="flex gap-4">
+    <div className="flex justify-end gap-4">
       <Button color="danger" content="Cancelar" type="secondary" onPress={closeModal}/>
       <Button color="primary" content="Confirmar" type="primary"/>
     </div>

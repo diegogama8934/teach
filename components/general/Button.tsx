@@ -1,6 +1,8 @@
 "use client";
+import { drawBackgroundAndBorderForPrimary, drawBackgroundAndBorderForSecondary, getIconColorForPrimary } from "@/utils";
 
-import { useEffect } from "react";
+// bg-primaryColor bg-amber-600 bg-red-600 bg-transparent
+// border-primaryColor border-amber-600 border-red-600 border-primaryColor
 
 interface Props {
   content:string
@@ -13,37 +15,19 @@ interface Props {
 
 export function Button({content, startIcon, endIcon, type, color, onPress}:Props){
 
-  function drawBackgroundAndBorder():string{
-    switch (color) {
-      case "primary":
-        return "bg-primaryColor border-primaryColor text-white";
-      case "warning":
-        return "bg-amber-600 border-amber-600 text-white";
-      case "danger":
-        return "bg-red-600 border-red-600 text-white";
-      default:
-        return "bg-primaryColor border-primaryColor text-white";
-    }
-  }
-
-  function getIconColor(){
-    switch (color) {
-      case "primary":
-        return "!text-primaryColor";
-      case "warning":
-        return "!text-amber-600";
-      case "danger":
-        return "!text-red-600";
-      default:
-        return "!text-primaryColor";
-    }
-  }
-
-  return(
-    <button className={`${drawBackgroundAndBorder()} px-4 py-2 border-[1px] rounded-md flex items-center gap-2`} onClick={onPress}>
-      {startIcon && <span className={`material-symbols-rounded ${type == "primary" ? "!text-white" : getIconColor()} inline-block !text-[18px]`}>{startIcon}</span>}
+  if (type == "primary") return(
+    <button className={`${drawBackgroundAndBorderForPrimary(color)} px-4 py-2 border-[1px] rounded-md flex items-center gap-2 hover:scale-105 transition-all`} onClick={onPress}>
+      {startIcon && <span className={`material-symbols-rounded !text-white inline-block !text-[18px]`}>{startIcon}</span>}
       <span className="inline-block text-sm">{content}</span>
-      {endIcon && <span className={`material-symbols-rounded ${type == "primary" ? "!text-white" : getIconColor()} inline-block !text-[18px]`}>{endIcon}</span>}
+      {endIcon && <span className={`material-symbols-rounded !text-white inline-block !text-[18px]`}>{endIcon}</span>}
+    </button>
+  );
+
+  if (type == "secondary") return(
+    <button className={`${drawBackgroundAndBorderForSecondary(color)} px-4 py-2 border-[1px] rounded-md flex items-center gap-2 hover:scale-105 transition-all`} onClick={onPress}>
+      {startIcon && <span className={`material-symbols-rounded inline-block !text-[18px]`}>{startIcon}</span>}
+      <span className="inline-block text-sm">{content}</span>
+      {endIcon && <span className={`material-symbols-rounded inline-block !text-[18px]`}>{endIcon}</span>}
     </button>
   );
 }

@@ -86,8 +86,12 @@
     color: var(--soft-color-15)
 }
 
+.btn-primary-primaryColor {
+    background-color: "#dc2626";
+    border-color: "#dc2626";
+    color:white
 
-.card-subject-teacher-primary {}
+}
 
 textarea {
     field-sizing: content;
