@@ -5,6 +5,8 @@
 
 :root {
     --primary-color: #02735E;
+    --warning: #f59e0b;
+    --danger: #dc2626;
     --soft-color-1: #81BED9;
     --soft-color-2: #98B4FF;
     --soft-color-3: #9386A9;
@@ -86,8 +88,41 @@
     color: var(--soft-color-15)
 }
 
+.btn-primary-primaryColor {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color:white
+}
 
-.card-subject-teacher-primary {}
+.btn-secondary-primaryColor {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-primary-warning {
+    background-color: var(--warning);
+    border-color: var(--warning);
+    color:white
+}
+
+.btn-secondary-warning {
+    background-color: transparent;
+    border-color: var(--warning);
+    color: var(--warning);
+}
+
+.btn-primary-danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
+    color:white
+}
+
+.btn-secondary-danger {
+    background-color: transparent;
+    border-color: var(--danger);
+    color: var(--danger);
+}
 
 textarea {
     field-sizing: content;

@@ -1,1 +1,2 @@
-export * from "./useCreateSubject"
+export { useCreateSubject } from "./useCreateSubject";
+export { useModal } from "@/hooks/useModal";

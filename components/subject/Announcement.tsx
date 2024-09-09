@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image";
 import { AddCommentOnAnnouncement, CommentsOnAnnouncement } from "@/components";
 import { annoucement } from "@/interfaces";

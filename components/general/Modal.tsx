@@ -1,20 +1,29 @@
 "use client"
-import { useState } from "react";
 
 interface Props {
   isOpen: boolean
   title: string
   content: React.ReactNode
   footer: React.ReactNode
+  children: React.ReactNode
   closeModal:() => void
   onModalOpen?: () => void
   onModalClose?:() => void
 }
 
-export function Modal({isOpen, title, content, footer, closeModal, onModalClose, onModalOpen}:Props){
+export function Modal({
+  isOpen,
+  title,
+  content,
+  footer,
+  children,
+  closeModal,
+  onModalClose = () => {},
+  onModalOpen = () => {}
+}:Props){
 
   function handleCloseModal(){
-    if (onModalClose)onModalClose();
+    onModalClose();
     closeModal();
   }
 
