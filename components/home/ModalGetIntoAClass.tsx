@@ -1,19 +1,12 @@
 "use client";
 import { FormEvent, useState } from "react";
-import { Modal, Button } from "@/components";
+import { Modal, ModalHeader, Button } from "@/components";
+import { useModal } from "@/hooks";
 
 export function ModalGetIntoAClass() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [error, setError] = useState(false);
   const [classCode, setClassCode] = useState("");
-
-  function openModal(){
-    setIsModalOpen(true);
-  }
-  
-  function closeModal(){
-    setIsModalOpen(false);
-  }
+  const { isModalOpen, closeModal, openModal } = useModal();
 
   function updateClassCode(newValue: string) {
     setClassCode(newValue);
@@ -21,8 +14,8 @@ export function ModalGetIntoAClass() {
 
   async function handleFormSubmit(e: FormEvent) {
     e.preventDefault();
-    setIsModalOpen(false);
     // Fetch
+    closeModal();
   }
 
   return (
@@ -48,11 +41,15 @@ export function ModalGetIntoAClass() {
           />
         }
         footer={
-          <ModalFooter 
+          <ModalFooter
             closeModal={closeModal}
           />
         }
-      />
+      >
+        <ModalHeader>
+          <span className="text-2xl text-zinc-500">Ingresando a un curso</span>
+        </ModalHeader>
+      </Modal>
     </>
   );
 }
@@ -86,11 +83,11 @@ function ModalContent({
   );
 }
 
-function ModalFooter({closeModal}: {closeModal: () => void}) {
+function ModalFooter({ closeModal }: { closeModal: () => void }) {
   return (
     <div className="flex justify-end gap-4">
-      <Button color="danger" content="Cancelar" type="primary" onPress={closeModal}/>
-      <Button color="primary" content="Confirmar" type="primary"/>
+      <Button color="danger" content="Cancelar" type="primary" onPress={closeModal} />
+      <Button color="primary" content="Confirmar" type="primary" />
     </div>
   );
 }

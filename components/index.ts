@@ -1,6 +1,7 @@
 // General (ui kit)
 export { Button } from "@/components/general/Button";
 export { Modal } from "@/components/general/Modal";
+export { ModalHeader } from "@/components/general/ModalHeader";
 
 // Presentation (landing and onboarding)
 export { Drawer } from "@/components/presentation/Drawer";
